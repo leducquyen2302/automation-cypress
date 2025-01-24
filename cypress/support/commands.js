@@ -2772,8 +2772,7 @@ Cypress.Commands.add('UnpublishAnnouncement_ByApi', (announId) => {
     })
 })
 
-Cypress.Commands.add('CreatePaper_byAPI', (courseCode, paperName, section) => {
-
+Cypress.Commands.add('createPaper_byAPI', (courseId, paperName, section) => {
     cy.API_Login().then((res_auth) => {
         let token = res_auth.body.accessToken
         let auth = {
@@ -2781,13 +2780,9 @@ Cypress.Commands.add('CreatePaper_byAPI', (courseCode, paperName, section) => {
             tenId: env[cu_ten_string].System.tenantid,
             apiUrl: api_url
         }
-        cy.getCourseIdByAPI(auth, courseCode)
-            .then((response) => {
-                expect(response.status).to.eq(200)
-                const courseId = response.body.result[0].id;
-                cy.log('Course ID: ' + courseId);
-                createPaper(auth, courseId, paperName, section)
-            })
+
+        createPaper(auth, courseId, paperName, section)
+
     })
 })
 
@@ -2806,14 +2801,10 @@ function getPaperBody(courseId, paperName, sect, appendix) {
         sections: sect
     }
     for (let i = 0; i < sect.length; i++) {
-
         let sectorQuestionCount = sect[i].questions.length
-        cy.log('section question count: ' + sectorQuestionCount)
         for (let j = 0; j < sectorQuestionCount; j++) {
             paperBody.fullMarks += sect[i].questions[j].question.fullMarks
             paperBody.totalMarks += sect[i].questions[j].question.totalMarks
-            cy.log('paperBody.fullMarks    :' + paperBody.fullMarks)
-            cy.log('paperBody.totalMarks    :' + paperBody.totalMarks)
         }
     }
     if (appendix) {
@@ -2854,15 +2845,23 @@ function createPaper(auth, courseId, paperName, section) {
             Cookie: "TenantId=" + auth.tenId
         },
         body: body
-    }).then((response) => {
-        cy.log('Response Body: ' + JSON.stringify(response.body))
-        // Check if the response status is 201 (created)
-        expect(response.status).to.eq(201)
-        cy.log('Create paper successfully for course ' + courseId)
     })
 }
 
-Cypress.Commands.add('createExamStep1ByAPI', (courseCode, body) => {
+Cypress.Commands.add('createExamStep1ByAPI', (auth, body) => {
+    cy.request({
+        url: auth.apiUrl + '/schedule/api/exam',
+        method: 'POST',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        },
+        body: body
+    })
+})
+
+
+Cypress.Commands.add('createExamAndPublishExamByAPI', (courseCode, paperName, section, body) => {
     cy.API_Login().then((res_auth) => {
         let token = res_auth.body.accessToken
         let auth = {
@@ -2870,25 +2869,74 @@ Cypress.Commands.add('createExamStep1ByAPI', (courseCode, body) => {
             tenId: env[cu_ten_string].System.tenantid,
             apiUrl: api_url
         }
-        cy.getCourseIdByAPI(auth, courseCode).then((response) => {
-            expect(response.status).to.eq(200)
-            body.courseId = response.body.result[0].id
-            cy.log('body : ' + JSON.stringify(body))
-            cy.request({
-                url: auth.apiUrl + '/schedule/api/exam',
-                method: 'POST',
-                auth: { 'bearer': auth.token },
-                headers: {
-                    Cookie: "TenantId=" + auth.tenId
-                },
-                body: body
-            }).then((response) => {
-                cy.log('Response Body: ' + JSON.stringify(response.body));
-                // ACheck if the response status is 201 (created)
-                expect(response.status).to.eq(201)
-                cy.log('Create exam successfully for course ' + body.courseId)
+        //get course Id
+        cy.getCourseIdByAPI(auth, courseCode).then(($res1) => {
+            expect($res1.status).to.eq(200)
+            let cId = $res1.body.result[0].id
+            body.courseId = cId
+            //Create a new exam
+            cy.createExamStep1ByAPI(auth, body).then(($res2) => {
+                cy.log('Response Body Create Exam: ' + JSON.stringify($res2.body))
+                expect($res2.status).to.eq(201)
+                //get exam Id
+                let exmId = $res2.body.id
+                cy.log('exam ID is: ' + exmId)
+                //Create paper
+                cy.createPaper_byAPI(cId, paperName, section).then(($res3) => {
+                    cy.log('Response Body Create Paper: ' + JSON.stringify($res3.body))
+                    let paperId = $res3.body.data
+                    cy.log('paper ID is: ' + paperId)
+
+                    //Add paper
+                    addPaperToExam(auth, exmId, paperId)
+                    //Publish exam
+                    publishExam(auth, exmId)
+                    cy.log ('create and publist exam successfully') 
+                    cy.log ('exam name :' + body.examName +',    course code :' + courseCode) 
+                })
             })
         })
-
     })
 })
+
+function addPaperToExam(auth, examId, paperId) {
+    cy.request({
+        url: auth.apiUrl + '/schedule/api/exampaper',
+        method: 'POST',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        },
+        body: {
+            "id": examId,
+            "items": [
+                {
+                    "id": paperId
+                }
+            ],
+            "isRemove": false,
+            "timezoneOffset": -420
+        }
+    })
+}
+
+function publishExam(auth, examId) {
+    cy.request({
+        url: auth.apiUrl + '/schedule/api/exam/publishexam',
+        method: 'PUT',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        },
+        body: {
+            "ids": [
+                examId
+            ],
+            "timeFormat": "M/d/yyyy HH:mm",
+            "timezoneOffset": -420
+        }
+    }).then((response) => {
+        cy.log('Response Body Create Exam: ' + JSON.stringify(response.body))
+        expect(response.status).to.eq(201)
+    })
+}
