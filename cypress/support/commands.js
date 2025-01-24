@@ -2873,10 +2873,7 @@ Cypress.Commands.add('createExamStep1ByAPI', (courseCode, body) => {
         cy.getCourseIdByAPI(auth, courseCode).then((response) => {
             expect(response.status).to.eq(200)
             body.courseId = response.body.result[0].id
-            
-            cy.log('Course ID: ' + body.courseId)
             cy.log('body : ' + JSON.stringify(body))
-
             cy.request({
                 url: auth.apiUrl + '/schedule/api/exam',
                 method: 'POST',
@@ -2889,7 +2886,7 @@ Cypress.Commands.add('createExamStep1ByAPI', (courseCode, body) => {
                 cy.log('Response Body: ' + JSON.stringify(response.body));
                 // ACheck if the response status is 201 (created)
                 expect(response.status).to.eq(201)
-                cy.log('Create exam successfully for course ' +  body.courseId)
+                cy.log('Create exam successfully for course ' + body.courseId)
             })
         })
 

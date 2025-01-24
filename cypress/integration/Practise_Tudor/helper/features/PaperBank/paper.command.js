@@ -39,7 +39,7 @@ before(() => {
 })
 
 Cypress.PaperBankPage.createPaper = () => {
-    cy.CreatePaper_byAPI('1020', 'TutuPaper_'+date, section)
+    cy.CreatePaper_byAPI('ZT-course01', 'TutuPaper_'+date, section)
 }
 
 

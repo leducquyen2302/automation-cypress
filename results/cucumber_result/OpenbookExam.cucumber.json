@@ -17,22 +17,12 @@
         "steps": [
           {
             "arguments": [],
-            "keyword": "Given ",
-            "line": 3,
-            "name": "Login as service admin",
-            "result": {
-              "status": "passed",
-              "duration": 6918000000
-            }
-          },
-          {
-            "arguments": [],
             "keyword": "When ",
             "line": 4,
             "name": "I prepare a new Openbook exam before taking the exam",
             "result": {
               "status": "passed",
-              "duration": 8182000000
+              "duration": 13339000000
             }
           }
         ]
