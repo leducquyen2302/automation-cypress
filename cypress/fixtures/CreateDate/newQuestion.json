@@ -1,0 +1,118 @@
+{
+    "standardQuestions": {
+        "SingleChoice": {
+            "name": "SingleChoice",
+            "title": "True or false: In an IaaS environment, the cloud tenant is responsible for routine hardware maintenance.",
+            "questionType": 0,
+            "fullMarks": 4,
+            "options": [
+                "True",
+                "False"
+            ],
+            "multiAns": false,
+            "correctAns": [
+                1
+            ],
+            "advanSeting": {
+                "topic": "",
+                "difficulty": 1,
+                "allowRandom": false,
+                "markingScheme": "false"
+            }
+        },
+        "MulitChoice": {
+            "name": "MulitChoice",
+            "title": "Which of the following choices is(are) cloud computing category?",
+            "questionType": 1,
+            "fullMarks": 8,
+            "options": [
+                "Platform-as-a-Service (PaaS)",
+                "Networking-as-a-Service (NaaS)",
+                "Infrastructure-as-a-Service (IaaS)",
+                "Software-as-a-Service (SaaS)"
+            ],
+            "multiAns": true,
+            "correctAns": [
+                0,
+                2,
+                3
+            ],
+            "advanSeting": {
+                "topic": "",
+                "difficulty": 1,
+                "allowRandom": false,
+                "markingScheme": ""
+            }
+        },
+        "Essay": {
+            "name": "Essay",
+            "title": "Essay: How many types of cloud computing, what are they? ",
+            "questionType": 3,
+            "fullMarks": 8.5,
+            "advanSeting": {
+                "topic": "",
+                "difficulty": 1,
+                "markingScheme": "there are 3 kinds of cloud: Private cloud; Public cloud; Hybrid cloud"
+            }
+        },
+        "FillBlank": {
+            "name": "FillBlank",
+            "title": "_BLANK1_is a logical unit of Azure services that links to an _BLANK2_ ",
+            "questionType": 2,
+            "fullMarks": 8,
+            "correctAns": [
+                "Azure subscription",
+                "Azure account"
+            ],
+            "advanSeting": {
+                "topic": "",
+                "difficulty": 1,
+                "caseSensi": true,
+                "markingScheme": "case sensitive"
+            }
+        },
+        "SubQues": {
+            "name":"SubQues",
+            "title":"Explore Azure Storage services",
+            "questions":[
+                {
+                    "name":"SingleChoice",
+                    "title": "Which Azure Storage option is better for storing data for backup and restore, disaster recovery, and archiving?                    ",
+                    "questionType": 0,
+                    "options": [
+                        "Azure Files Storage",
+                        "Azure Disk Storage",
+                        "Azure Blob Storage"
+                    ],
+                    "multiAns": false,
+                    "correctAns": [
+                        2
+                    ],
+                    "advanSeting": {
+                        "fullMarks": 4,
+                        "topic": "",
+                        "difficulty": 1,
+                        "allowRandom": false,
+                        "markingScheme": "Azure Blob Storage"
+                    }
+                },
+                {
+                    "name":"Essay",
+                    "title": "Azure Storage offers different access tiers for your blob storage, The available access tiers include:",
+                    "questionType": 3,
+                    "advanSeting": {
+                        "fullMarks": 9,
+                        "topic": "",
+                        "difficulty": 1,
+                        "markingScheme": "Hot access tier; Cool access tier; Archive access tier"
+                    }
+                }
+            ],
+            "advanSeting":{
+                "topic": "",
+                "difficulty": 1
+            }
+        }
+    },
+    "toCreateQuestionType": "FillBlank"
+}

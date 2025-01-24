@@ -1,0 +1,35 @@
+{
+    "Course": [
+        {
+            "code": "AT001",
+            "name": "AutoTesting Programme 1",
+            "id": "631d6c28-357e-4af2-a28e-cd5715190ad0",
+            "candidate":["stu0","stu1","stu2","stu3","stu4","stu5"]
+        },
+        {
+            "code": "AT002",
+            "name": "AutoTesting Programme 2",
+            "id": "d2fe215d-67c0-4204-9b1a-b65d834bcc60",
+            "candidate":["stu0","stu1","stu2","stu3","stu4","stu5"]
+        },
+        {
+            "code": "AT003",
+            "name": "AutoTesting Programme 3",
+            "id": "a1729857-3ccc-43ed-ad36-cdaab4b2dedf",
+            "candidate":["stu0","stu1","stu2","stu3","stu4","stu5"]
+        },
+        {
+            "code": "AT004",
+            "name": "AutoTesting Programme 4",
+            "candidate":["stu0","stu1","stu2"]
+        }
+    ],
+    "Question":[
+        {
+            "course":"AT003",
+            "type":"Essay",
+            "content":"How old are you?",
+            "grade":"100"
+        }
+    ]
+}

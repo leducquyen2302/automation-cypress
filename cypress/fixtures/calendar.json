@@ -1,0 +1,24 @@
+{
+  "examInfo": {
+    "name": "AT_Flexible_Cal_NoDur@12292024-121036",
+    "courseCode": "AT001",
+    "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+    "startOffset": {
+      "level": "min",
+      "off": 1
+    },
+    "startTime": "2024-12-29T04:11:00.000Z",
+    "duration": 10,
+    "endTime": "2025-01-05T04:11:00.000Z",
+    "isOpenB": false,
+    "isSave2LocalFile": true,
+    "filePath": "calendar.json",
+    "previewTime": 0,
+    "examClassification": 1,
+    "deadline": 10080,
+    "instruction": "",
+    "examId": "82d46dd9-e442-425a-a09a-a275a7da959e",
+    "openTime": "2024-12-29T04:11:00.000Z",
+    "Classification": "Flexible time range"
+  }
+}

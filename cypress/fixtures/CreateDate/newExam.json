@@ -1,0 +1,36 @@
+{
+    "ExamInfo":[
+        {
+            "name" :"ATExam_AutoCreate 01",
+            "courseCode":"",
+            "startTime":"",
+            "duration" : "",
+            "endTime" :"",
+            "isOpenType": true ,
+            "examMode" : "Online",
+            "instruction": "",
+            "isOnlineVideoOn" : false,
+            "fileControl" : "default",
+            "fileTypeAllow": "",
+            "enrolCandis" : [],
+            "invigilators": [],
+            "paper":""
+        },
+        {
+            "name" :"ATExam_AutoCreate 02",
+            "courseCode":"",
+            "startTime":"",
+            "duration" : "",
+            "endTime" :"",
+            "isOpenType": true ,
+            "examMode" : "Online",
+            "instruction": "",
+            "isOnlineVideoOn" : false,
+            "fileControl" : "default",
+            "fileTypeAllow": "",
+            "enrolCandis" : 3,
+            "invigilators": "",
+            "paper":""
+        }
+    ]
+}

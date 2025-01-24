@@ -1,0 +1,490 @@
+{
+  "examInfo": {
+    "name": "ATExamMark@12292024-124216",
+    "courseCode": "AT001",
+    "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+    "startTime": "2024-12-29T04:43:00.000Z",
+    "duration": 4,
+    "endTime": "2024-12-29T04:47:00.000Z",
+    "isOpenB": true,
+    "isSave2LocalFile": true,
+    "filePath": "MarkExamInfo.json",
+    "isAppend": false,
+    "startOffset": {
+      "level": "min",
+      "off": 1
+    },
+    "instruction": "",
+    "examId": "46f332fa-96f9-478d-96e2-f4a5f99c3fd0",
+    "readTime": "2024-12-29T04:43:00.000Z",
+    "Classification": "Fixed time range"
+  },
+  "paperInfo": {
+    "name": "ATPaper_Mark 29/12/2024, 12:42:14",
+    "sections": [
+      {
+        "name": "AT Section 1",
+        "allowRandom": false,
+        "description": "Section1 Description",
+        "order": 1,
+        "questions": [
+          {
+            "order": 1,
+            "question": {
+              "Name": "Q1 Single Choice",
+              "richContent": "True or false: In an IaaS environment, the cloud tenant is responsible for routine hardware maintenance.",
+              "content": "True or false: In an IaaS environment, the cloud tenant is responsible for routine hardware maintenance.",
+              "questionType": 0,
+              "fullMarks": 4,
+              "totalMarks": 4,
+              "difficulty": 1,
+              "settings": "{\"options\":[{\"id\":\"choice_0\",\"content\":\"True\",\"marks\":null},{\"id\":\"choice_1\",\"content\":\"False\",\"marks\":null}],\"allowRandom\":false,\"markingMethod\":0,\"allowRichText\":false,\"optional\":true}",
+              "markingScheme": "{\"correctAnswers\":[\"choice_1\"],\"markingScheme\":\"\",\"responseFeedbackType\":1,\"responseFeedbackContent\":{\"correctContent\":\"Feedback to candidates if the response is correct for UI test\",\"wrongContent\":\"Feedback to candidates if the response is wrong for UI test\",\"commonContent\":\"\"}}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 2,
+            "question": {
+              "Name": "Q2 Muti Choice",
+              "richContent": "Which of the following choices is(are) cloud computing category?",
+              "content": "Which of the following choices is(are) cloud computing category?",
+              "questionType": 1,
+              "fullMarks": 6,
+              "totalMarks": 6,
+              "difficulty": 2,
+              "settings": "{\"options\":[{\"id\":\"choice_0\",\"content\":\"Platform-as-a-Service (PaaS)\",\"marks\":null},{\"id\":\"choice_1\",\"content\":\"Networking-as-a-Service (NaaS)\",\"marks\":null},{\"id\":\"choice_2\",\"content\":\"Infrastructure-as-a-Service (IaaS)\",\"marks\":null},{\"id\":\"choice_3\",\"content\":\"Software-as-a-Service (SaaS)\",\"marks\":null}],\"allowRandom\":false,\"markingMethod\":0,\"allowRichText\":false,\"optional\":true}",
+              "markingScheme": "{\"correctAnswers\":[\"choice_0\",\"choice_2\",\"choice_3\"],\"markingScheme\":\"\",\"responseFeedbackType\":2,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"Show feedback to candidates for UI test\"}}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 3,
+            "question": {
+              "Name": "Q4 FIB",
+              "richContent": "_BLANK1_is a logical unit of Azure services that links to an _BLANK2_.",
+              "content": "_BLANK1_is a logical unit of Azure services that links to an _BLANK2_.",
+              "questionType": 3,
+              "fullMarks": 4,
+              "totalMarks": 4,
+              "difficulty": 1,
+              "markingScheme": "{\"correctAnswers\":[[{\"key\":\"blank_1\",\"contents\":[\"Azure subscription\"],\"marks\":null},{\"key\":\"blank_2\",\"contents\":[\"Azure account\"],\"marks\":null}]],\"markingScheme\":\"\",\"caseSensitive\":false,\"responseFeedbackType\":1,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+              "settings": "{\"blanks\":[[{\"key\":\"blank_1\",\"contents\":[\"Azure subscription\"],\"marks\":null},{\"key\":\"blank_2\",\"contents\":[\"Azure account\"],\"marks\":null}]],\"markingMethod\":0}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 4,
+            "question": {
+              "Name": "Q5 FIB CaseSensitive",
+              "richContent": "_BLANK1_is a logical unit of Azure services that links to an _BLANK2_.",
+              "content": "_BLANK1_is a logical unit of Azure services that links to an _BLANK2_.",
+              "questionType": 3,
+              "fullMarks": 4,
+              "totalMarks": 4,
+              "difficulty": 1,
+              "markingScheme": "{\"correctAnswers\":[[{\"key\":\"blank_1\",\"contents\":[\"Azure subscription\"],\"marks\":null},{\"key\":\"blank_2\",\"contents\":[\"Azure account\"],\"marks\":null}]],\"markingScheme\":\"\",\"caseSensitive\":true,\"responseFeedbackType\":1,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+              "settings": "{\"blanks\":[[{\"key\":\"blank_1\",\"contents\":[\"Azure subscription\"],\"marks\":null},{\"key\":\"blank_2\",\"contents\":[\"Azure account\"],\"marks\":null}]],\"markingMethod\":0}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 5,
+            "question": {
+              "Name": "Q6 Sub-Ques",
+              "richContent": "Azure Knowledge Check",
+              "content": "Azure Knowledge Check",
+              "questionType": 5,
+              "fullMarks": 10.5,
+              "totalMarks": 10,
+              "difficulty": 1,
+              "questions": [
+                {
+                  "Name": "Q1 Single Choice",
+                  "richContent": "True or false: In an IaaS environment, the cloud tenant is responsible for routine hardware maintenance.",
+                  "content": "True or false: In an IaaS environment, the cloud tenant is responsible for routine hardware maintenance.",
+                  "questionType": 0,
+                  "fullMarks": 4,
+                  "totalMarks": 4,
+                  "difficulty": 1,
+                  "settings": "{\"options\":[{\"id\":\"choice_0\",\"content\":\"True\",\"marks\":null},{\"id\":\"choice_1\",\"content\":\"False\",\"marks\":null}],\"allowRandom\":false,\"markingMethod\":0,\"allowRichText\":false,\"optional\":true}",
+                  "markingScheme": "{\"correctAnswers\":[\"choice_1\"],\"markingScheme\":\"\",\"responseFeedbackType\":1,\"responseFeedbackContent\":{\"correctContent\":\"Feedback to candidates if the response is correct for UI test\",\"wrongContent\":\"Feedback to candidates if the response is wrong for UI test\",\"commonContent\":\"\"}}",
+                  "title": "",
+                  "subQuestionIndex": ""
+                },
+                {
+                  "Name": "Q3 Essay",
+                  "richContent": "Essay: How many types of cloud computing, what are they? ",
+                  "content": "Essay: How many types of cloud computing, what are they? ",
+                  "questionType": 4,
+                  "fullMarks": 6.5,
+                  "totalMarks": 6.5,
+                  "difficulty": 1,
+                  "markingScheme": "{\"markingScheme\":\" there are 3 kinds of cloud: Private cloud; Public cloud; Hybrid cloud\",\"modelAnswer\":\"\"}",
+                  "settings": "{\"allowRichText\":true,\"responseLimit\":0,\"number\":null,\"optional\":true}",
+                  "title": "",
+                  "subQuestionIndex": ""
+                }
+              ],
+              "markingScheme": "{}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 6,
+            "question": {
+              "Name": "Q7 True Or False",
+              "richContent": "True or false question!",
+              "content": "True or false question!",
+              "questionType": 2,
+              "fullMarks": 4,
+              "totalMarks": 4,
+              "difficulty": 1,
+              "settings": "{\"options\":[{\"id\":\"choice_0\",\"content\":\"True\",\"marks\":null},{\"id\":\"choice_1\",\"content\":\"False\",\"marks\":null}],\"allowRandom\":false,\"markingMethod\":0,\"allowRichText\":false}",
+              "markingScheme": "{\"markingScheme\":\"\",\"correctAnswer\":true,\"responseFeedbackType\":1,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 7,
+            "question": {
+              "Name": "Q8 Matching",
+              "richContent": "This is Matching~",
+              "content": "This is Matching~",
+              "questionType": 8,
+              "fullMarks": 4,
+              "totalMarks": 4,
+              "difficulty": 1,
+              "settings": "{\"options\":[{\"leftId\":\"option-0-left\",\"leftContent\":\"What's your name?\",\"rightId\":\"option-0-right\",\"rightContent\":\"Robbin\"},{\"leftId\":\"option-1-left\",\"leftContent\":\"What's your telephone number?\",\"rightId\":\"option-1-right\",\"rightContent\":\"###\"},{\"leftId\":\"option-2-left\",\"leftContent\":\"What's your age?\",\"rightId\":\"option-2-right\",\"rightContent\":\"Twenty Three\"},{\"leftId\":\"option-3-left\",\"leftContent\":\"Where are you from?\",\"rightId\":\"option-3-right\",\"rightContent\":\"China\"}],\"markingMethod\":0,\"allowRichText\":false}",
+              "markingScheme": "{\"correctAnswers\":[{\"leftId\":\"option-0-left\",\"rightId\":\"option-0-right\",\"marks\":null},{\"leftId\":\"option-1-left\",\"rightId\":\"option-1-right\",\"marks\":null},{\"leftId\":\"option-2-left\",\"rightId\":\"option-2-right\",\"marks\":null},{\"leftId\":\"option-3-left\",\"rightId\":\"option-3-right\",\"marks\":null}],\"markingScheme\":\"\",\"responseFeedbackType\":1,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 8,
+            "question": {
+              "Name": "Q12 Multiple drop-down",
+              "richContent": "This is a Multiple drop-down question!<span><span class=\"font-bold\">Blank_1</span></span>",
+              "content": "This is a Multiple drop-down question!Blank_1Blank ",
+              "questionType": 14,
+              "fullMarks": 4,
+              "totalMarks": 4,
+              "difficulty": 0,
+              "settings": "{\"dropdownList\":[{\"id\":\"Blank-1\",\"allowMultipleAnswers\":false,\"allowRichText\":false,\"options\":[{\"id\":\"choice_1_0\",\"content\":\"Drop-down第一个选项\"},{\"id\":\"choice_1_1\",\"content\":\"Drop-down第二个选项\"}]}],\"allowRandom\":false,\"displayType\":0,\"markingMethod\":1}",
+              "markingScheme": "{\"correctAnswers\":[{\"id\":\"Blank-1\",\"options\":[\"choice_1_1\"],\"marks\":4}],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          },
+          {
+            "order": 9,
+            "question": {
+              "Name": "Q13 Multiple radio button",
+              "richContent": "This is a Multiple radio button question!<span><span class=\"font-bold\">Blank_1</span></span>",
+              "content": "This is a Multiple drop-down question!Blank_1Blank ",
+              "questionType": 14,
+              "fullMarks": 4,
+              "totalMarks": 4,
+              "difficulty": 0,
+              "settings": "{\"dropdownList\":[{\"id\":\"Blank-1\",\"allowMultipleAnswers\":false,\"allowRichText\":false,\"options\":[{\"id\":\"choice_1_0\",\"content\":\"Radio button第一个选项\"},{\"id\":\"choice_1_1\",\"content\":\"Radio button第二个选项\"}]}],\"allowRandom\":false,\"displayType\":1,\"markingMethod\":1}",
+              "markingScheme": "{\"correctAnswers\":[{\"id\":\"Blank-1\",\"options\":[\"choice_1_1\"],\"marks\":4}],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+              "title": "",
+              "subQuestionIndex": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "AllStuResp": {
+    "Correct": {
+      "Q1": {
+        "Answer": [
+          "B. False"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q2": {
+        "Answer": [
+          1,
+          3,
+          4
+        ],
+        "Score": [
+          6
+        ]
+      },
+      "Q3": {
+        "Answer": [
+          "Azure subscription",
+          "Azure account"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q4": {
+        "Answer": [
+          "Azure subscription",
+          "Azure account"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q5": {
+        "Answer": [
+          "B. False",
+          "3 kinds of cloud: Private cloud; Public cloud; Hybrid cloud"
+        ],
+        "Score": [
+          10.5
+        ]
+      },
+      "Q6": {
+        "Answer": [
+          "True"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q7": {
+        "Answer": [
+          [
+            "What's your name?",
+            "Robbin"
+          ],
+          [
+            "What's your telephone number?",
+            "###"
+          ],
+          [
+            "What's your age?",
+            "Twenty Three"
+          ],
+          [
+            "Where are you from?",
+            "China"
+          ]
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q8": {
+        "Question": "This is a Multiple drop-down question!",
+        "Answer": [
+          "Drop-down第二个选项"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q9": {
+        "Question": "This is a Multiple radio button question!",
+        "Answer": [
+          "Radio button第二个选项"
+        ],
+        "Score": [
+          4
+        ]
+      }
+    },
+    "Stu1": {
+      "Q1": {
+        "Answer": [
+          "B. False"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q2": {
+        "Answer": [
+          1,
+          3,
+          4
+        ],
+        "Score": [
+          6
+        ]
+      },
+      "Q3": {
+        "Answer": [
+          "Azure subscription",
+          "Azure subscription"
+        ],
+        "Score": [
+          0
+        ]
+      },
+      "Q4": {
+        "Answer": [
+          "Azure subscription",
+          "Azure account"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q5": {
+        "Answer": [
+          "B. False",
+          "Private cloud; Public cloud; Hybrid cloud"
+        ],
+        "Score": [
+          10.5
+        ]
+      },
+      "Q6": {
+        "Answer": [
+          "True"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q7": {
+        "Answer": [
+          [
+            "What's your name?",
+            "Robbin"
+          ],
+          [
+            "What's your telephone number?",
+            "###"
+          ],
+          [
+            "What's your age?",
+            "Twenty Three"
+          ],
+          [
+            "Where are you from?",
+            "China"
+          ]
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q8": {
+        "Answer": [
+          "B. Drop-down第二个选项"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q9": {
+        "Answer": [
+          "B. Radio button第二个选项"
+        ],
+        "Score": [
+          4
+        ]
+      }
+    },
+    "Stu2": {
+      "Q1": {
+        "Answer": [
+          "A. True"
+        ],
+        "Score": [
+          0
+        ]
+      },
+      "Q2": {
+        "Answer": [
+          4
+        ],
+        "Score": [
+          0
+        ]
+      },
+      "Q3": {
+        "Answer": [
+          "azure subscription",
+          "azure account"
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q4": {
+        "Answer": [
+          "azure subscription",
+          "azure account"
+        ],
+        "Score": [
+          0
+        ]
+      },
+      "Q5": {
+        "Answer": [
+          "B. False",
+          ""
+        ],
+        "Score": [
+          4
+        ]
+      },
+      "Q6": {
+        "Answer": [
+          "False"
+        ],
+        "Score": [
+          0
+        ]
+      },
+      "Q7": {
+        "Answer": [
+          [
+            "What's your name?",
+            "###"
+          ],
+          [
+            "What's your telephone number?",
+            "Robbin"
+          ],
+          [
+            "What's your age?",
+            "Twenty Three"
+          ],
+          [
+            "Where are you from?",
+            "China"
+          ]
+        ],
+        "Score": [
+          0
+        ]
+      },
+      "Q8": {
+        "Answer": [
+          "A. Drop-down第一个选项"
+        ],
+        "Score": [
+          0
+        ]
+      },
+      "Q9": {
+        "Answer": [
+          "A. Radio button第一个选项"
+        ],
+        "Score": [
+          0
+        ]
+      }
+    }
+  }
+}

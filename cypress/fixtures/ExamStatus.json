@@ -1,0 +1,48 @@
+[
+  {
+    "examInfo": {
+      "name": "ATExam_Sta@12252024-142250",
+      "courseCode": "AT001",
+      "courseId": "450e574a-5213-45f7-8223-d9d21b7e0e11",
+      "startOffset": {
+        "level": "min",
+        "off": 2
+      },
+      "startTime": "2024-12-25T06:25:00.000Z",
+      "endTime": "2024-12-25T06:27:00.000Z",
+      "time2Start": 0,
+      "duration": 2,
+      "instruction": "This Instruction is for Exam : \r\nATExam_Sta\r\nPlease Read this content very carefully and be prepared for the following exam, \r\nGood Luck :) ☺",
+      "isOpenB": true,
+      "isSave2LocalFile": true,
+      "filePath": "ExamStatus.json",
+      "isAppend": true,
+      "examId": "afcf93e7-ac08-43f5-a0f9-263c4b21e0c4",
+      "readTime": "2024-12-25T06:25:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "ATExam_StudentSta @12252024-142515",
+      "courseCode": "AT001",
+      "courseId": "450e574a-5213-45f7-8223-d9d21b7e0e11",
+      "startOffset": {
+        "level": "min",
+        "off": 120
+      },
+      "startTime": "2024-12-25T08:25:00.000Z",
+      "endTime": "2024-12-25T09:25:00.000Z",
+      "time2Start": 0,
+      "duration": 60,
+      "instruction": "This Instruction is for Exam : \r\nATExam_StudentSta \r\nPlease Read this content very carefully and be prepared for the following exam, \r\nGood Luck :) ☺",
+      "isOpenB": true,
+      "isSave2LocalFile": true,
+      "filePath": "ExamStatus.json",
+      "isAppend": true,
+      "examId": "10f98d07-2f83-4f66-be88-e52f434e3e3e",
+      "readTime": "2024-12-25T08:25:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  }
+]

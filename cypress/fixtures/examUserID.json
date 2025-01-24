@@ -1,0 +1,62 @@
+[
+  {
+    "examInfo": {
+      "name": "ATExam_UserID@12292024-101808",
+      "courseId": "55f88b55-c714-4e81-992d-ed7839defbf1",
+      "courseCode": "AT001",
+      "startOffset": {
+        "level": "min",
+        "off": 1
+      },
+      "startTime": "2024-12-29T02:19:00.000Z",
+      "duration": 10,
+      "endTime": "2024-12-29T02:29:00.000Z",
+      "isopenB": false,
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "filePath": "examUserID.json",
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 6.5
+        }
+      ],
+      "instruction": "",
+      "examId": "7179625a-6dce-45c0-aea1-43cf5bd7767b",
+      "readTime": "2024-12-29T02:19:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "ATExam_UserID@12292024-101808@12292024-101815",
+      "courseId": "55f88b55-c714-4e81-992d-ed7839defbf1",
+      "courseCode": "AT001",
+      "startOffset": {
+        "level": "min",
+        "off": 1
+      },
+      "startTime": "2024-12-29T02:19:00.000Z",
+      "duration": 10,
+      "endTime": "2024-12-29T02:29:00.000Z",
+      "isopenB": false,
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "filePath": "examUserID.json",
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 6.5
+        }
+      ],
+      "instruction": "",
+      "examId": "da3237cf-c5c9-443d-b625-637ae5e8cc75",
+      "readTime": "2024-12-29T02:19:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  }
+]

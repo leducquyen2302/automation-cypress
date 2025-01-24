@@ -1,0 +1,13 @@
+{
+    "testFiles": "**/*.feature",
+    "baseUrl": "https://examenauat.dev.edutechonline.org",
+    "viewportWidth": 1920,
+    "viewportHeight": 1080,
+    "video": false,
+    "capture": "viewport",
+    "numTestsKeptInMemory": 5,
+    "pageLoadTimeout": 180000,
+    "watchForFileChanges": false,
+    "defaultCommandTimeout": 50000,
+    "chromeWebSecurity": false
+}

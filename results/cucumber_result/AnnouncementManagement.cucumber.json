@@ -1,0 +1,42 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Announcement management",
+    "line": 1,
+    "id": "announcement-management",
+    "tags": [],
+    "uri": "AnnouncementManagement.feature",
+    "elements": [
+      {
+        "id": "announcement-management;view-announcement-management-page",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "View Announcement management page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "Login as service admin and go to Announcement Management",
+            "result": {
+              "status": "passed",
+              "duration": 12914000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 4,
+            "name": "I edit announcement",
+            "result": {
+              "status": "passed",
+              "duration": 33070000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

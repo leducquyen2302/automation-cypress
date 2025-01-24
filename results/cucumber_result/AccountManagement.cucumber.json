@@ -1,0 +1,240 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Account Management",
+    "line": 1,
+    "id": "account-management",
+    "tags": [],
+    "uri": "AccountManagement.feature",
+    "elements": [
+      {
+        "id": "account-management;view-account-management-page",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "View Account management page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "Login as service admin and go to Account Management",
+            "result": {
+              "status": "passed",
+              "duration": 20101000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 4,
+            "name": "I check the staff list and candidate list are correct",
+            "result": {
+              "status": "passed",
+              "duration": 2964000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "check the message on top is correct",
+            "result": {
+              "status": "passed",
+              "duration": 978000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "account-management;filter-photo-validation",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Filter Photo validation",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I filter Photo validation",
+            "result": {
+              "status": "passed",
+              "duration": 3724000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I check the filter result in candidate list is correct Photo validation",
+            "result": {
+              "status": "passed",
+              "duration": 6961000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "account-management;filter-status-in-candidate-list",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Filter Status in candidate list",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I filter status in candidate list",
+            "result": {
+              "status": "passed",
+              "duration": 2946000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I check the filter result in candidate list is correct status",
+            "result": {
+              "status": "passed",
+              "duration": 8066000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "account-management;filter-property-in-candidate-list",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Filter Property in candidate list",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "I filter property in candidate list",
+            "result": {
+              "status": "passed",
+              "duration": 2832000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I check the filter result in candidate list is correct property",
+            "result": {
+              "status": "passed",
+              "duration": 3789000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "account-management;filter-status-in-staff-list",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Filter Status in staff list",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 20,
+            "name": "I filter status in staff list",
+            "result": {
+              "status": "passed",
+              "duration": 3240000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I check the filter result in staff list is correct status",
+            "result": {
+              "status": "passed",
+              "duration": 6607000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "account-management;filter-property-in-staff-list",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Filter Property in staff list",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "I filter property in staff list",
+            "result": {
+              "status": "passed",
+              "duration": 2965000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "I check the filter result in staff list is correct property",
+            "result": {
+              "status": "passed",
+              "duration": 4132000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "account-management;search-staff",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Search staff",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login as service admin and go to Account Management",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'split')\n    at getTokenfromEOS (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:1650:34)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:1632:5)\nFrom previous event:\n    at Context.thenFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173242:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172077:8)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126278:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126404:12\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126187:14)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126197:7\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126160:7)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180310:24)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180336:59)\n    at done (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126121:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:120091:27)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "I enter search key 'staff' into search field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "I check result is correct after search",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

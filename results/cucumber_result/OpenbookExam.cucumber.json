@@ -1,0 +1,42 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Openbook exam",
+    "line": 1,
+    "id": "openbook-exam",
+    "tags": [],
+    "uri": "OpenbookExam.feature",
+    "elements": [
+      {
+        "id": "openbook-exam;candidate-taking-exam",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Candidate taking exam",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "Login as service admin",
+            "result": {
+              "status": "passed",
+              "duration": 6918000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I prepare a new Openbook exam before taking the exam",
+            "result": {
+              "status": "passed",
+              "duration": 8182000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

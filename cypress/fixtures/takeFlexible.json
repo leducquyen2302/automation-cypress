@@ -1,0 +1,40 @@
+{
+  "examInfo": {
+    "name": "AT_Flexible_Take_NoDuration@12292024-112405",
+    "courseCode": "AT001",
+    "courseId": "55f88b55-c714-4e81-992d-ed7839defbf1",
+    "startOffset": {
+      "level": "min",
+      "off": 1
+    },
+    "previewTime": 0,
+    "startTime": "2024-12-29T03:25:00.000Z",
+    "duration": 0,
+    "endTime": "2024-12-29T03:35:00.000Z",
+    "isopenB": "",
+    "isSave2LocalFile": true,
+    "isAppend": false,
+    "sections": [
+      {
+        "questNo": 1,
+        "name": "AT Section 1",
+        "description": "Choice and Essay",
+        "fullScore": 6.5
+      }
+    ],
+    "isOpenB": true,
+    "filePath": "takeFlexible.json",
+    "studentCount": [
+      "ATStudent001",
+      "ATStudent002",
+      "ATStudent003"
+    ],
+    "instruction": "",
+    "examId": "6f988e60-9380-46f3-9c5f-dae22c0413de",
+    "readTime": "2024-12-29T03:23:00.000Z",
+    "Classification": "Flexible time range",
+    "examClassification": 1,
+    "deadline": 10,
+    "openTime": "2024-12-29T03:25:00.000Z"
+  }
+}

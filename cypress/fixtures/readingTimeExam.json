@@ -1,0 +1,37 @@
+{
+  "examInfo": {
+    "name": "ATExam_Reading@12292024-112135",
+    "courseCode": "AT001",
+    "courseId": "55f88b55-c714-4e81-992d-ed7839defbf1",
+    "startOffset": {
+      "level": "min",
+      "off": 7
+    },
+    "previewTime": 5,
+    "startTime": "2024-12-29T03:28:00.000Z",
+    "duration": 1,
+    "endTime": "2024-12-29T03:29:00.000Z",
+    "isopenB": "",
+    "isSave2LocalFile": true,
+    "isAppend": false,
+    "sections": [
+      {
+        "questNo": 1,
+        "name": "AT Section 1",
+        "description": "Choice and Essay",
+        "fullScore": 6.5
+      }
+    ],
+    "isOpenB": true,
+    "filePath": "readingTimeExam.json",
+    "studentCount": [
+      "ATStudent001",
+      "ATStudent002",
+      "ATStudent003"
+    ],
+    "instruction": "",
+    "examId": "3179cc4f-801f-41f0-91e8-1d47e43daf62",
+    "readTime": "2024-12-29T03:23:00.000Z",
+    "Classification": "Fixed time range"
+  }
+}

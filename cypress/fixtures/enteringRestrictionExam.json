@@ -1,0 +1,31 @@
+{
+  "examInfo": {
+    "name": "AT_Entrance restriction@12292024-135617",
+    "courseCode": "AT001",
+    "courseId": "723b69c7-d9fa-4813-a276-8655ef95ecc2",
+    "startOffset": {
+      "level": "min",
+      "off": 1
+    },
+    "startTime": "2024-12-29T05:57:00.000Z",
+    "duration": 10,
+    "endTime": "2024-12-29T06:07:00.000Z",
+    "isSave2LocalFile": true,
+    "isAppend": false,
+    "filePath": "enteringRestrictionExam.json",
+    "enteringRestriction": 1,
+    "isOpenB": true,
+    "instruction": "This is a verify Entrance restriction exam",
+    "sections": [
+      {
+        "questNo": 1,
+        "name": "AT Section 1",
+        "description": "Choice and Essay",
+        "fullScore": 4
+      }
+    ],
+    "examId": "bc4f63e2-4398-4f0f-bf29-d29043dd681e",
+    "readTime": "2024-12-29T05:57:00.000Z",
+    "Classification": "Fixed time range"
+  }
+}

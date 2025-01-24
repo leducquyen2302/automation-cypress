@@ -1,0 +1,48 @@
+{
+    "hasError": false,
+    "result": [
+        {
+            "examId": "6d6ce64c-9ea6-41ab-b8df-e8a14eb40030",
+            "courseCode": "AT001",
+            "examName": "ATExam_ForAPP_01 MOCK",
+            "courseManager": "Thomas Chen",
+            "isActive": true,
+            "startDate": "2021-03-03T11:06:00+08:00",
+            "endDate": "2021-03-03T12:06:00+08:00",
+            "isTaking": true,
+            "isUpcoming": false,
+            "paperId": "2f9333bf-bd60-4e96-a070-662afad7fc3c",
+            "totalQuestions": 4,
+            "fullMarks": 24.5
+        },
+        {
+            "examId": "ebd33f0a-75b2-48e4-9f04-17e55787ce6d",
+            "courseCode": "AT001",
+            "examName": "ATExam_ForAPP_02 MOCK",
+            "courseManager": "Thomas Chen",
+            "isActive": true,
+            "startDate": "2021-03-04T12:03:00+08:00",
+            "endDate": "2021-03-04T13:03:00+08:00",
+            "isTaking": false,
+            "isUpcoming": true,
+            "paperId": "70142c93-3c92-49d4-af00-d0be136b4672",
+            "totalQuestions": 60,
+            "fullMarks": 120
+        },
+        {
+            "examId": "ebd33f0a-75b2-48e4-9f04-17e55787ce7d",
+            "courseCode": "AT002",
+            "examName": "ATExam_ForAPP_03 MOCK",
+            "courseManager": "Thomas Chen",
+            "isActive": true,
+            "startDate": "2021-03-04T13:03:00+08:00",
+            "endDate": "2021-03-04T14:03:00+08:00",
+            "isTaking": false,
+            "isUpcoming": true,
+            "paperId": "70142c93-3c92-49d4-af00-d0be136b4672",
+            "totalQuestions": 60,
+            "fullMarks": 120
+        }
+    ],
+    "studentName": "Betty"
+}

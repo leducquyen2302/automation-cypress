@@ -1,0 +1,69 @@
+[
+  {
+    "examInfo": {
+      "name": "ATExam_SyncCandidate_fixed@12242024-133450",
+      "courseCode": "AT003",
+      "courseId": "54140773-1a4a-4587-9b44-67f46c0dbedb",
+      "startOffset": {
+        "level": "min",
+        "off": 6
+      },
+      "startTime": "2024-12-24T05:41:00.000Z",
+      "duration": 10,
+      "endTime": "2024-12-24T05:51:00.000Z",
+      "isopenB": "",
+      "filePath": "syncCandidateExam.json",
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 6.5
+        }
+      ],
+      "isOpenB": true,
+      "stuGroupName": "ATGroup_",
+      "previewTime": 5,
+      "instruction": "",
+      "examId": "bc67c9ef-b772-4f54-a959-b356390ec944",
+      "readTime": "2024-12-24T05:36:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "ATExam_SyncCandidate_flexible@12242024-133703",
+      "courseCode": "AT003",
+      "courseId": "54140773-1a4a-4587-9b44-67f46c0dbedb",
+      "startOffset": {
+        "level": "min",
+        "off": 5
+      },
+      "startTime": "2024-12-24T05:42:00.000Z",
+      "duration": 1,
+      "endTime": "2024-12-24T05:43:00.000Z",
+      "isopenB": "",
+      "filePath": "syncCandidateExam.json",
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 6.5
+        }
+      ],
+      "isOpenB": true,
+      "stuGroupName": "",
+      "previewTime": 0,
+      "instruction": "",
+      "examId": "423bef32-76c9-4ac0-9754-74e2f617c63a",
+      "readTime": "2024-12-24T05:42:00.000Z",
+      "Classification": "Flexible time range",
+      "examClassification": 1
+    }
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "examInfo": {
+      "name": "ATExamAPP01@12252024-164948",
+      "courseCode": "AT001",
+      "courseId": "450e574a-5213-45f7-8223-d9d21b7e0e11",
+      "startOffset": {
+        "level": "min",
+        "off": 2
+      },
+      "startTime": "2024-12-25T08:51:00.000Z",
+      "duration": 30,
+      "endTime": "2024-12-25T09:21:00.000Z",
+      "isOpenB": true,
+      "isSave2LocalFile": true,
+      "filePath": "examInfo.json",
+      "isAppend": true,
+      "sections": [
+        {
+          "questNo": 3,
+          "fullMarks": 20.5,
+          "totalMarks": 30.5,
+          "name": "AT Section 1",
+          "description": "Choice and Essay"
+        },
+        {
+          "questNo": 2,
+          "fullMarks": 20,
+          "totalMarks": 20,
+          "name": "AT Section 2",
+          "description": "Fill-in-blank"
+        }
+      ],
+      "instruction": "This is a instruction!",
+      "examId": "23a38dd7-a620-4ea9-b214-7e6170aa5b95",
+      "readTime": "2024-12-25T08:51:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "ATExamAPP02@12252024-164952",
+      "courseCode": "AT001",
+      "courseId": "450e574a-5213-45f7-8223-d9d21b7e0e11",
+      "startOffset": {
+        "level": "min",
+        "off": 3
+      },
+      "startTime": "2024-12-25T08:53:00.000Z",
+      "duration": 10,
+      "endTime": "2024-12-25T09:03:00.000Z",
+      "isOpenB": false,
+      "isSave2LocalFile": true,
+      "filePath": "examInfo.json",
+      "isAppend": true,
+      "sections": [
+        {
+          "questNo": 3,
+          "fullMarks": 20.5,
+          "totalMarks": 30.5,
+          "name": "AT Section 1",
+          "description": "Choice and Essay"
+        },
+        {
+          "questNo": 2,
+          "fullMarks": 20,
+          "totalMarks": 20,
+          "name": "AT Section 2",
+          "description": "Fill-in-blank"
+        }
+      ],
+      "instruction": "This is a instruction!",
+      "examId": "59d3846d-4736-4141-b2f1-611cb5d9e0eb",
+      "readTime": "2024-12-25T08:53:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "ATExamAPP03@12252024-164957",
+      "courseCode": "AT001",
+      "courseId": "450e574a-5213-45f7-8223-d9d21b7e0e11",
+      "startOffset": {
+        "level": "min",
+        "off": 60
+      },
+      "startTime": "2024-12-25T09:50:00.000Z",
+      "duration": 10,
+      "endTime": "2024-12-25T10:00:00.000Z",
+      "isOpenB": true,
+      "isSave2LocalFile": true,
+      "filePath": "examInfo.json",
+      "isAppend": true,
+      "sections": [
+        {
+          "questNo": 3,
+          "fullMarks": 20.5,
+          "totalMarks": 30.5,
+          "name": "AT Section 1",
+          "description": "Choice and Essay"
+        },
+        {
+          "questNo": 2,
+          "fullMarks": 20,
+          "totalMarks": 20,
+          "name": "AT Section 2",
+          "description": "Fill-in-blank"
+        }
+      ],
+      "instruction": "This is a instruction!",
+      "examId": "f104dbd7-2532-44a4-ac3f-bb4729dfb5a1",
+      "readTime": "2024-12-25T09:50:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  }
+]

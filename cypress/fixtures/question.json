@@ -1,0 +1,239 @@
+[
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"correctAnswers\":[{\"id\":\"5ca8d885-0f20-4786-848b-9e6aea45d809\",\"description\":\"\",\"categoryName\":\"Category 1\",\"correctOptions\":[{\"id\":\"95dfeb9d-6834-4e61-a28f-da1753114568\",\"content\":\"answer : 1\\n\",\"marks\":null},{\"id\":\"536c257b-5f9c-4baf-8b3f-904929a0281e\",\"content\":\"answer : 2\\n\",\"marks\":null},{\"id\":\"9ca2ee27-c1a1-48a9-b507-fc044c5c7a5c\",\"content\":\"answer : 3\\n\",\"marks\":null}]}],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{\"categories\":[{\"id\":\"5ca8d885-0f20-4786-848b-9e6aea45d809\",\"description\":\"\",\"categoryName\":\"Category 1\"}],\"options\":[{\"id\":\"95dfeb9d-6834-4e61-a28f-da1753114568\",\"content\":\"answer : 1\\n\"},{\"id\":\"536c257b-5f9c-4baf-8b3f-904929a0281e\",\"content\":\"answer : 2\\n\"},{\"id\":\"9ca2ee27-c1a1-48a9-b507-fc044c5c7a5c\",\"content\":\"answer : 3\\n\"}],\"markingMethod\":0,\"allowRichText\":false}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Categorization question",
+            "richContent": "Categorization question",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 13,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "cf5fab86-69c8-4301-89a1-a8bf84997737"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"correctAnswers\":[\"choice_3\"],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{\"options\":[{\"id\":\"choice_0\",\"content\":\"answer : 1\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null},{\"id\":\"choice_1\",\"content\":\"answer : 2\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null},{\"id\":\"choice_2\",\"content\":\"answer : 3\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null},{\"id\":\"choice_3\",\"content\":\"answer : 4\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null}],\"allowRandom\":false,\"markingMethod\":0,\"allowRichText\":false,\"optional\":false}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Single Choice question",
+            "richContent": "Single Choice question",
+            "questionType": 0,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "3f746f58-b275-438d-b122-a039c51d19c3"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"correctAnswers\":[\"choice_2\",\"choice_3\"],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{\"options\":[{\"id\":\"choice_0\",\"content\":\"answer : 1\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null},{\"id\":\"choice_1\",\"content\":\"answer : 2\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null},{\"id\":\"choice_2\",\"content\":\"answer : 3\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null},{\"id\":\"choice_3\",\"content\":\"answer : 4\",\"checked\":false,\"chineseContent\":\"\",\"branchIndex\":0,\"marks\":null}],\"allowRandom\":false,\"markingMethod\":0,\"allowRichText\":false,\"optional\":false}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Multiple choice question",
+            "richContent": "Multiple choice question",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 1,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "3c67c753-7b9b-4db7-81a2-8edab462cfc7"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"markingScheme\":\"\",\"modelAnswer\":\"\"}",
+            "settings": "{\"allowRichText\":true,\"responseLimit\":0,\"number\":null,\"optional\":false,\"allowQR\":true,\"displayResponse\":true}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Essay question",
+            "richContent": "Essay question",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 4,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "130d0818-074d-4374-82cf-793c817f0e8c"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"markingScheme\":\"\"}",
+            "settings": "{\"isShowBox\":true,\"allowRichText\":false,\"responseLimit\":0,\"number\":null}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "File upload question",
+            "richContent": "File upload question",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 6,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "a44cbae0-8b4a-4154-90db-fdfd2193f779"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"correctAnswers\":[[{\"key\":\"blank_1\",\"contents\":[\"1\"],\"marks\":1}]],\"markingScheme\":\"\",\"caseSensitive\":false,\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{\"blanks\":[[{\"key\":\"blank_1\",\"contents\":[],\"marks\":1}]],\"markingMethod\":1}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Fill-in-the-blank questionBlank_1Blank 1​ ",
+            "richContent": "Fill-in-the-blank questionBlank_1Blank 1​ ",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 3,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "0382eb59-0865-4bbf-84ef-eeb43525c988"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"correctAnswers\":[{\"leftId\":\"option-0-left\",\"rightId\":\"option-0-right\",\"marks\":null},{\"leftId\":\"option-1-left\",\"rightId\":\"option-1-right\",\"marks\":null},{\"leftId\":\"option-2-left\",\"rightId\":\"option-2-right\",\"marks\":null}],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{\"options\":[{\"leftId\":\"option-0-left\",\"leftContent\":\"answer : 1\\n\",\"rightId\":\"option-0-right\",\"rightContent\":\"1\"},{\"leftId\":\"option-1-left\",\"leftContent\":\"answer : 2\\n\",\"rightId\":\"option-1-right\",\"rightContent\":\"2\"},{\"leftId\":\"option-2-left\",\"leftContent\":\"answer : 3\\n\",\"rightId\":\"option-2-right\",\"rightContent\":\"3\"}],\"markingMethod\":0,\"allowRichText\":false}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Matching question",
+            "richContent": "<br data-cke-eol=\"1\">Matching question&nbsp;",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 8,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "e4d45944-1f2c-432e-9dff-d64311b0da94"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"correctAnswers\":[{\"id\":\"Blank-1\",\"options\":[\"choice_1_1\"],\"marks\":1}],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{\"dropdownList\":[{\"id\":\"Blank-1\",\"allowMultipleAnswers\":false,\"allowRichText\":false,\"options\":[{\"id\":\"choice_1_0\",\"content\":\"answer : 1\"},{\"id\":\"choice_1_1\",\"content\":\"answer : 2\"},{\"id\":\"choice_1_2\",\"content\":\"answer : 3\"}]}],\"allowRandom\":false,\"displayType\":0,\"markingMethod\":1}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Multiple dropdown questionBlank_1Blank 1​ ",
+            "richContent": "<span style=\"font-size:18.6667px\">Multiple dropdown question<span><span id=\"question4948e26d-7e24-4888-8f49-f7fb37936310-Blank-1\" contenteditable=\"false\" class=\"answer-block aui-richeditor-span question4948e26d-7e24-4888-8f49-f7fb37936310-Blank-1\"><span class=\"font-bold\">Blank_1</span><span class=\"display-text\">Blank 1</span></span></span></span>",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 14,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "4948e26d-7e24-4888-8f49-f7fb37936310"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"correctAnswers\":[{\"id\":\"order_0\",\"content\":\"answer : 1\",\"marks\":null},{\"id\":\"order_1\",\"content\":\"answer : 2\",\"marks\":null},{\"id\":\"order_2\",\"content\":\"answer : 3\",\"marks\":null}],\"markingScheme\":\"\",\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{\"options\":[{\"id\":\"order_0\",\"content\":\"answer : 1\"},{\"id\":\"order_1\",\"content\":\"answer : 2\"},{\"id\":\"order_2\",\"content\":\"answer : 3\"}],\"markingMethod\":0,\"allowRichText\":false}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "Ordering question",
+            "richContent": "Ordering question",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 11,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "8c3251fc-0000-4c81-8c1a-cfa194a012de"
+        }
+    },
+    {
+        "question": {
+            "difficulty": 0,
+            "markingScheme": "{\"markingScheme\":\"\",\"correctAnswer\":true,\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
+            "settings": "{}",
+            "status": 2,
+            "subQuestionIndex": "",
+            "title": "",
+            "content": "T/F question",
+            "richContent": "T/F question",
+            "chineseContent": "",
+            "chineseRichContent": "",
+            "questionType": 2,
+            "fullMarks": 1,
+            "additionalMarks": null,
+            "additionalMarksContent": "",
+            "totalMarks": 1,
+            "expanderStatus": {
+                "show": true
+            },
+            "topics": [],
+            "uniqueId": "c207fa31-80eb-49cf-aa41-8ee5d3c256ea"
+        }
+    }
+]

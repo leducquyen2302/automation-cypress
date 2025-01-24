@@ -1,0 +1,35 @@
+{
+  "examInfo": {
+    "name": "AT_Attempts_Exam@12252024-084624",
+    "courseCode": "AT001",
+    "courseId": "7b3fbd92-3b10-4979-ac7f-246a800bd601",
+    "startOffset": {
+      "level": "min",
+      "off": 1
+    },
+    "previewTime": 0,
+    "startTime": "2024-12-25T00:47:00.000Z",
+    "duration": 10,
+    "endTime": "2024-12-25T00:49:00.000Z",
+    "isopenB": "",
+    "isSave2LocalFile": true,
+    "isAppend": false,
+    "sections": [
+      {
+        "questNo": 1,
+        "name": "AT Section 1",
+        "description": "Choice and Essay",
+        "fullScore": 4
+      }
+    ],
+    "isOpenB": true,
+    "filePath": "attemptExam.json",
+    "examClassification": 1,
+    "deadline": 2,
+    "examAttempts": 3,
+    "instruction": "",
+    "examId": "f3ca89e7-8d3a-40a3-8513-b6a9f0e8ed28",
+    "openTime": "2024-12-25T00:47:00.000Z",
+    "Classification": "Flexible time range"
+  }
+}

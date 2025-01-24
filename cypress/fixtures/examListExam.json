@@ -1,0 +1,39 @@
+{
+  "examInfo": {
+    "name": "ATExam_List1_@12292024-123844",
+    "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+    "startOffset": {
+      "level": "min",
+      "off": 30
+    },
+    "previewTime": 5,
+    "startTime": "2024-12-29T05:08:00.000Z",
+    "duration": 1,
+    "endTime": "2024-12-29T05:09:00.000Z",
+    "isopenB": "",
+    "isSave2LocalFile": true,
+    "keyCode": 30,
+    "isAppend": false,
+    "sections": [
+      {
+        "questNo": 1,
+        "name": "AT Section 1",
+        "description": "Choice and Essay",
+        "fullScore": 6.5
+      }
+    ],
+    "courseCode": "AT001",
+    "courseName": "AutoTesting Programme 1",
+    "isOpenB": false,
+    "filePath": "examListExam.json",
+    "studentCount": [
+      "Uistudent001_name",
+      "Uistudent002_name",
+      "Uistudent003_name"
+    ],
+    "instruction": "",
+    "examId": "5dd44729-e067-4d8f-b422-4b77ae339188",
+    "readTime": "2024-12-29T05:03:00.000Z",
+    "Classification": "Fixed time range"
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Feature name",
+    "line": 1,
+    "id": "feature-name",
+    "tags": [],
+    "uri": "practise.feature",
+    "elements": [
+      {
+        "id": "feature-name;create-sample-exam",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Create sample exam",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "Login as service admin and switch to Sample exams tab",
+            "result": {
+              "status": "passed",
+              "duration": 17323000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 4,
+            "name": "I click create sample exam has name 'Sample exam 001' and save",
+            "result": {
+              "status": "passed",
+              "duration": 14346000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I check disply newly created sample exam and prompt message is correct",
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

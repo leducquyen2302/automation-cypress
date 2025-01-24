@@ -1,0 +1,58 @@
+{
+    "Courses":[
+        {
+            "code": "AutoCreateCourse 001",
+            "name": "AutoTesting Programme 1",
+            "id": "",
+            "CM": {
+                "staffName": "ATUser003_CM01",
+                "staffID": "ATUser003_CM01",
+                "loginID": "ATStaff003@Test.qa"
+            }
+        },
+        {
+            "code": "ATC 002",
+            "name": "AutoTesting Programme 1",
+            "id": "",
+            "CM": {
+                "staffName": "ATUser003_CM01",
+                "staffID": "ATUser003_CM01",
+                "loginID": "ATStaff003@Test.qa"
+            }
+        },
+        {
+            "code": "ATC 003",
+            "name": "AutoTesting Programme 1",
+            "id": "",
+            "CM": {}
+        },
+        {
+            "code": "ATC 004",
+            "name": "AutoTesting Programme 1",
+            "id": "",
+            "CM": {}
+        }
+    ],
+    "CourseManager":{
+        "staffName": "ATUser003_CM01",
+        "staffID": "ATUser003_CM01",
+        "loginID": "ATStaff003@Test.qa"
+    },
+    "CandidateList":[
+        {
+            "name": "ATStudent001",
+            "id": "ATStudent001",
+            "userid": "ATStudent001@Test.qa"
+        },
+        {
+            "name": "ATStudent002",
+            "id": "ATStudent002",
+            "userid": "ATStudent002@Test.qa"
+        },
+        {
+            "name": "ATStudent003",
+            "id": "ATStudent003",
+            "userid": "ATStudent003@Test.qa"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+  "examCalendarResult": [
+    {
+      "courseCode": "AT001",
+      "courseManagerId": "00000000-0000-0000-0000-000000000000",
+      "courseManager": null,
+      "coCourseManagerIds": null,
+      "candidatesCount": 0,
+      "examId": "d3c29f96-147b-49f4-b3db-7554cd8e86cf",
+      "examName": "ATExam Mock01",
+      "examNameDisplay": "AT001 - ATExam Mock01 Long Exam Title",
+      "examRoleType": 0,
+      "startDate": "2024-12-29T04:09:00.000Z",
+      "endDate": "2024-12-29T04:39:00.000Z",
+      "previewTime": 0,
+      "fullMarks": 80.5,
+      "totalMarks": 80.5,
+      "invigilatorId": "00000000-0000-0000-0000-000000000000",
+      "paperId": "00000000-0000-0000-0000-000000000000",
+      "totalQuestions": 10
+    },
+    {
+      "courseCode": "AT001",
+      "courseManagerId": "00000000-0000-0000-0000-000000000000",
+      "courseManager": null,
+      "coCourseManagerIds": null,
+      "candidatesCount": 0,
+      "examId": "d3c29f96-147b-49f4-b3db-7554cd8e86cf",
+      "examName": "ATExam Mock02",
+      "examNameDisplay": "AT001 - ATExam Mock02",
+      "examRoleType": 0,
+      "startDate": "2024-12-29T04:09:00.000Z",
+      "endDate": "2024-12-29T05:09:00.000Z",
+      "previewTime": 0,
+      "fullMarks": 125,
+      "totalMarks": 125,
+      "invigilatorId": "00000000-0000-0000-0000-000000000000",
+      "paperId": "00000000-0000-0000-0000-000000000000",
+      "totalQuestions": 10
+    },
+    {
+      "courseCode": "AT003",
+      "courseManagerId": "00000000-0000-0000-0000-000000000000",
+      "courseManager": null,
+      "coCourseManagerIds": null,
+      "candidatesCount": 0,
+      "examId": "d3c29f96-147b-49f4-b3db-7554cd8e86cf",
+      "examName": "ATExam Mock03",
+      "examNameDisplay": "AT003 - ATExam Mock03",
+      "examRoleType": 0,
+      "startDate": "2024-12-29T04:09:00.000Z",
+      "endDate": "2024-12-29T06:09:00.000Z",
+      "previewTime": 0,
+      "fullMarks": 150,
+      "totalMarks": 150,
+      "invigilatorId": "00000000-0000-0000-0000-000000000000",
+      "paperId": "00000000-0000-0000-0000-000000000000",
+      "totalQuestions": 12
+    }
+  ]
+}

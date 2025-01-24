@@ -1,0 +1,40 @@
+{
+  "examInfo": {
+    "name": "AT_Flexible_Edit_open@12252024-160406",
+    "courseCode": "AT001",
+    "courseId": "450e574a-5213-45f7-8223-d9d21b7e0e11",
+    "startOffset": {
+      "level": "min",
+      "off": 1
+    },
+    "startTime": "2024-12-25T08:05:00.000Z",
+    "duration": 5,
+    "endTime": "2024-12-25T08:15:00.000Z",
+    "isSave2LocalFile": true,
+    "isAppend": false,
+    "filePath": "editEndTimeExam.json",
+    "sections": [
+      {
+        "questNo": 1,
+        "name": "AT Section 1",
+        "description": "Choice and Essay",
+        "fullScore": 4
+      }
+    ],
+    "isOpenB": true,
+    "previewTime": 0,
+    "examClassification": 1,
+    "deadline": 10,
+    "studentCount": [
+      "Uistudent001_name",
+      "Uistudent002_name",
+      "Uistudent003_name",
+      "Uistudent004_name"
+    ],
+    "stuChangeInviNumber": 4,
+    "instruction": "",
+    "examId": "a8c60b65-576b-4700-a0ce-e42ed0f2bbb0",
+    "openTime": "2024-12-25T08:05:00.000Z",
+    "Classification": "Flexible time range"
+  }
+}

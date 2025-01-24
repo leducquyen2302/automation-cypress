@@ -1,0 +1,182 @@
+[
+  {
+    "examInfo": {
+      "name": "AT_Unpublish01@12292024-123519",
+      "courseCode": "AT001",
+      "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+      "startOffset": {
+        "level": "min",
+        "off": 15
+      },
+      "startTime": "2024-12-29T04:50:00.000Z",
+      "duration": 5,
+      "endTime": "2024-12-29T04:55:00.000Z",
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "filePath": "unpublishExam.json",
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 4
+        }
+      ],
+      "isOpenB": true,
+      "previewTime": 5,
+      "studentCount": [
+        "Uistudent001_name",
+        "Uistudent002_name",
+        "Uistudent003_name"
+      ],
+      "instruction": "",
+      "examId": "18510a80-5166-4e93-90c8-01e94e5abb4d",
+      "readTime": "2024-12-29T04:45:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "AT_Unpublish02@12292024-123530",
+      "courseCode": "AT001",
+      "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+      "startOffset": {
+        "level": "min",
+        "off": 15
+      },
+      "startTime": "2024-12-29T04:50:00.000Z",
+      "duration": 5,
+      "endTime": "2024-12-29T04:55:00.000Z",
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "filePath": "unpublishExam.json",
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 4
+        }
+      ],
+      "isOpenB": false,
+      "previewTime": 0,
+      "studentCount": [
+        "Uistudent001_name",
+        "Uistudent002_name",
+        "Uistudent003_name"
+      ],
+      "instruction": "",
+      "examId": "ee714f71-5997-400a-a970-2432ebda3506",
+      "readTime": "2024-12-29T04:50:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "AT_Unpublish03@12292024-123541",
+      "courseCode": "AT001",
+      "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+      "startOffset": {
+        "level": "min",
+        "off": 15
+      },
+      "startTime": "2024-12-29T04:50:00.000Z",
+      "duration": 5,
+      "endTime": "2024-12-29T04:55:00.000Z",
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "filePath": "unpublishExam.json",
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 4
+        }
+      ],
+      "isOpenB": false,
+      "previewTime": 0,
+      "studentCount": [
+        "Uistudent001_name",
+        "Uistudent002_name",
+        "Uistudent003_name"
+      ],
+      "instruction": "",
+      "examId": "9642d513-669a-485c-a8de-e8c77d9de673",
+      "readTime": "2024-12-29T04:50:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "AT_Unpublish04@12292024-123552",
+      "courseCode": "AT001",
+      "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+      "startOffset": {
+        "level": "min",
+        "off": 15
+      },
+      "startTime": "2024-12-29T04:51:00.000Z",
+      "duration": 5,
+      "endTime": "2024-12-29T04:56:00.000Z",
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "filePath": "unpublishExam.json",
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 4
+        }
+      ],
+      "isOpenB": true,
+      "previewTime": 5,
+      "studentCount": [
+        "Uistudent001_name",
+        "Uistudent002_name",
+        "Uistudent003_name"
+      ],
+      "instruction": "",
+      "examId": "499c24ec-95cc-4580-94de-ec32448704bf",
+      "readTime": "2024-12-29T04:46:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  },
+  {
+    "examInfo": {
+      "name": "AT_Unpublish05@12292024-123602",
+      "courseCode": "AT001",
+      "courseId": "f5ce3824-974f-4e97-a58d-1291aecb2e5a",
+      "startOffset": {
+        "level": "min",
+        "off": 15
+      },
+      "startTime": "2024-12-29T04:51:00.000Z",
+      "duration": 5,
+      "endTime": "2024-12-29T04:56:00.000Z",
+      "isSave2LocalFile": true,
+      "isAppend": true,
+      "filePath": "unpublishExam.json",
+      "sections": [
+        {
+          "questNo": 1,
+          "name": "AT Section 1",
+          "description": "Choice and Essay",
+          "fullScore": 4
+        }
+      ],
+      "isOpenB": true,
+      "previewTime": 0,
+      "studentCount": [
+        "Uistudent001_name",
+        "Uistudent002_name",
+        "Uistudent003_name"
+      ],
+      "instruction": "",
+      "examId": "ca46c596-b71d-478b-9e20-f1b831629ff1",
+      "readTime": "2024-12-29T04:51:00.000Z",
+      "Classification": "Fixed time range"
+    }
+  }
+]
