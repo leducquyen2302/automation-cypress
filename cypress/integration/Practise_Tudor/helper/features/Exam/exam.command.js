@@ -60,6 +60,15 @@ Cypress.ExamPage.createExamForCourse = () => {
     cy.log('examBody   = ' + JSON.stringify(examBody))
     cy.createExamAndPublishExamByAPI('ZT-course01', 'TutuPaper_' + date, section, examBody)
 }
+Cypress.ExamPage.delteteExamCreated = () => {
+    cy.deleteExamByAPI(examBody.examName)
+    cy.log('delete exam name   = ' + JSON.stringify(examBody.examName))
+
+}
+Cypress.ExamPage.deltetePaperCreated = () => {
+    cy.deletePaperByAPI('TutuPaper_' + date)
+    cy.log('delete paper name   = ' + 'TutuPaper_' + date)
+}
 
 
 

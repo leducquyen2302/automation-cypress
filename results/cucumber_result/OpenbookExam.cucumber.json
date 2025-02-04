@@ -22,7 +22,17 @@
             "name": "I prepare a new Openbook exam before taking the exam",
             "result": {
               "status": "passed",
-              "duration": 4014000000
+              "duration": 1937000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I verify candidate taking the exam and submitting the answers normally",
+            "result": {
+              "status": "passed",
+              "duration": 2063000000
             }
           }
         ]

@@ -2780,9 +2780,7 @@ Cypress.Commands.add('createPaper_byAPI', (courseId, paperName, section) => {
             tenId: env[cu_ten_string].System.tenantid,
             apiUrl: api_url
         }
-
         createPaper(auth, courseId, paperName, section)
-
     })
 })
 
@@ -2891,8 +2889,8 @@ Cypress.Commands.add('createExamAndPublishExamByAPI', (courseCode, paperName, se
                     addPaperToExam(auth, exmId, paperId)
                     //Publish exam
                     publishExam(auth, exmId)
-                    cy.log ('create and publist exam successfully') 
-                    cy.log ('exam name :' + body.examName +',    course code :' + courseCode) 
+                    cy.log('create and publist exam successfully')
+                    cy.log('exam name :' + body.examName + ',    course code :' + courseCode)
                 })
             })
         })
@@ -2940,3 +2938,143 @@ function publishExam(auth, examId) {
         expect(response.status).to.eq(201)
     })
 }
+
+Cypress.Commands.add('deleteExamByAPI', (examName) => {
+    cy.API_Login().then((res_auth) => {
+        let token = res_auth.body.accessToken
+        let auth = {
+            token: token,
+            tenId: env[cu_ten_string].System.tenantid,
+            apiUrl: api_url
+        }
+        deleteExamByAPI(auth, examName)
+    })
+})
+
+function deleteExamByAPI(auth, examName) {
+    cy.getExamIdByName(auth, examName).then(($res) => {
+        let examId = $res.body.result[0].examId
+        cy.log('examId is: ' + examId)
+        cy.request({
+            url: auth.apiUrl + '/schedule/api/exam/deletepublishedexam',
+            method: 'DELETE',
+            auth: { 'bearer': auth.token },
+            headers: {
+                Cookie: "TenantId=" + auth.tenId
+            },
+            body: {
+                "Ids": [examId],
+                "timezoneOffset": -420
+
+            }
+        })
+            .then((response) => {
+                if (response.status === 201) {
+                    cy.log(`Exam with ID ${examId} deleted successfully.`);
+                } else {
+                    cy.log(`Failed to delete exam. Status: ${response.status}`);
+                }
+            })
+    })
+}
+
+Cypress.Commands.add('getExamIdByName', (auth, examName) => {
+    cy.request({
+        url: auth.apiUrl + '/schedule/api/exam/getallexamsbycurrentuser',
+        method: 'POST',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        },
+        body: {
+            "searchText": examName,
+            "searchFields": "ExamName",
+            "filters": {
+                "courseFilter": [],
+                "semester": [],
+                "examPublishStatusDisplay": [],
+                "examTypeDisplay": [],
+                "examClassificationDisplay": [],
+                "Level1Filter": [],
+                "Level2Filter": [],
+            },
+            "startDate": "2025-01-04T17:00:00.000Z",
+            "offset": 1,
+            "limit": 24,
+            "sortBy": "ExamReadingStartDateOffset",
+            "isASC": false,
+            "viewType": 1,
+            "timezoneOffset": -420
+        }
+    })
+})
+
+Cypress.Commands.add('deletePaperByAPI', (paperName) => {
+    cy.API_Login().then((res_auth) => {
+        let token = res_auth.body.accessToken
+        let auth = {
+            token: token,
+            tenId: env[cu_ten_string].System.tenantid,
+            apiUrl: api_url
+        }
+        deletePaperByAPI(auth, paperName)
+    })
+})
+
+function deletePaperByAPI(auth, paperName) {
+    cy.getPaperIdByName(auth, paperName).then(($res) => {
+        cy.log('$res.body is: ' + JSON.stringify($res.body))
+
+        let paperId = $res.body.data.value.result[0].id
+
+        cy.log('paperId is: ' + paperId)
+        cy.request({
+            url: auth.apiUrl + '/authoring/api/papers',
+            method: 'DELETE',
+            auth: { 'bearer': auth.token },
+            headers: {
+                Cookie: "TenantId=" + auth.tenId
+            },
+            body: {
+                "Ids": [paperId],
+                "timezoneOffset": -420
+
+            }
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    cy.log(`Exam with ID ${paperId} deleted successfully.`);
+                } else {
+                    cy.log(`Failed to delete exam. Status: ${response.status}`);
+                }
+            })
+    })
+}
+
+Cypress.Commands.add('getPaperIdByName', (auth, paperName) => {
+    cy.request({
+        url: auth.apiUrl + '/authoring/api/papers/bank',
+        method: 'POST',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        },
+        body: {
+            "searchText": paperName,
+            "SearchFields": "name",
+            "filters": {
+                "courseFilter": [],
+                "semester": [],
+                "statusStr": [],
+                "papertypestr": [],
+                "Level1Filter": [],
+                "Level2Filter": [],
+            },
+            "offset": 1,
+            "limit": 10,
+            "sortBy": "modifiedTime",
+            "isASC": false,
+            "timezoneOffset": -420
+        }
+    })
+})
