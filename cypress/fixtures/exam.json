@@ -1,11 +1,11 @@
 {
   "instruction": "",
-  "enableVideoProctoring": true,
+  "enableVideoProctoring": false,
   "enableFacialRecognition": false,
   "enableIdVerification": false,
   "enableEnvironmentCheck": true,
-  "enableScreenRecording": true,
-  "enableCandidateRecording": true,
+  "enableScreenRecording": false,
+  "enableCandidateRecording": false,
   "authorisedURLSetting": 2,
   "authorisedApplicationsSetting": 2,
   "maximumUploadSize": 50,
@@ -24,7 +24,7 @@
     "suspiciousDevices": true,
     "humanVoiceDetected": true
   },
-  "screenRecording": true,
+  "screenRecording": false,
   "enteringRestriction": 0,
   "intervalKeyCode": 0,
   "enableChatBox": true,
@@ -36,6 +36,6 @@
   "attempts": 1,
   "examType": 1,
   "timezoneOffset": -420,
-  "startDate":"2025-02-25T07:02:00.000Z",
-  "endDate":"2025-02-25T08:02:00.000Z"
+  "startDate":"2025-02-05T10:27:00.000Z",
+  "endDate":"2025-02-05T11:27:00.000Z"
 }

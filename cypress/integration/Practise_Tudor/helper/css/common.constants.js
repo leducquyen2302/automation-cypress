@@ -43,3 +43,18 @@ export const header = {
     guideIcon : '.std-question-icon',
     profileIcon : '.layout-userphoto',
 }
+export const leftNav = {
+    navigator: '.common-nav-item',
+    Home : '',
+    Exam : '.common-nav-item a[href*="/#/exam"]',
+    Bank : '.common-nav-item a[href*="/#/authoring"]',
+    Reports : '.common-nav-item a[href*="/#/report"]',
+    Admin : '.common-nav-item a[href*="/#/admin"]',
+    Calendar : '.common-nav-item a[href*="/#/Calendar"]',
+
+}
+
+export const dialog = {
+    modal :'#aui-message-dialog',
+    dialogTitle: '.aui-dialog-title-content',
+}

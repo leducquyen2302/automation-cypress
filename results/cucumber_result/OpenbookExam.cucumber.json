@@ -17,22 +17,42 @@
         "steps": [
           {
             "arguments": [],
-            "keyword": "When ",
+            "keyword": "And ",
             "line": 4,
-            "name": "I prepare a new Openbook exam before taking the exam",
+            "name": "I login as candidate and go to instructions page",
             "result": {
               "status": "passed",
-              "duration": 1937000000
+              "duration": 65453000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I enter a openbook exam",
+            "result": {
+              "status": "passed",
+              "duration": 3550000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I answer all the questions",
+            "result": {
+              "status": "passed",
+              "duration": 12407000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 5,
-            "name": "I verify candidate taking the exam and submitting the answers normally",
+            "line": 7,
+            "name": "I verify candidate submitting the answers normally",
             "result": {
               "status": "passed",
-              "duration": 2063000000
+              "duration": 34000000
             }
           }
         ]

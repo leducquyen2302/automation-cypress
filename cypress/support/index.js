@@ -67,6 +67,7 @@ import  '../integration/Practise_Tudor/helper/features/admin.account.command'
 import  '../integration/Practise_Tudor/helper/features/admin.announcement.command'
 import  '../integration/Practise_Tudor/helper/features/Exam/exam.command'
 import  '../integration/Practise_Tudor/helper/features/PaperBank/paper.command'
+import  '../integration/Practise_Tudor/helper/features/common.command'
 
 
 
