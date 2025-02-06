@@ -54,12 +54,25 @@ before(() => {
     })
 })
 
-// When(/^I prepare a new Openbook exam before taking the exam$/, () => {
-//     Cypress.ExamPage.createExamForCourse()
-// })
-
-And(/^I login as candidate and go to instructions page$/, () => {
+// Scenario: Course manager verify result before taking
+Given(/^I login as course management verify in the Attendance page before submit$/, () => {
     Cypress.ExamPage.createExamForCourse('ZT-course01', 'TutuPaper_' + date, paperBody, examBody)
+    cy.LoginExamAsSystem()
+    Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
+    Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage('Scan_ZTstu01@snapmail.cc')
+})
+
+And(/^I verify exam in Marking page before submit$/, () => {
+    Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage('Scan_ZTstu01@snapmail.cc')
+})
+And(/^ verify exam in the Grading page and publish score to candidate before submit$/, () => {
+    
+    cy.logoutApi()
+})
+
+
+//Scenario: Candidate taking exam
+And(/^I login as candidate and go to instructions page$/, () => {
     cy.LoginByLocal('Scan_ZTstu01@snapmail.cc')
     Cypress.ExamPage.goToInstructionsPageOfExam(examBody.examName)
 })
@@ -74,24 +87,27 @@ And(/^I answer all the questions$/, () => {
 
 Then(/^I verify candidate submitting the answers normally$/, () => {
     Cypress.ExamPage.submitExamSuccess()
+    cy.logoutApi()
 })
 
-Given(/^I login as course management verify in the Attendance page$/, () => {
+
+//Scenario: Course manager verify result after taking
+Given(/^I login as course management verify in the Attendance page after submit$/, () => {
     cy.LoginExamAsSystem()
     Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
-    Cypress.ExamPage.verifyResultAfterCandidateSubmit('Scan_ZTstu01@snapmail.cc')
+    Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage('Scan_ZTstu01@snapmail.cc')
 
 })
 
-Then(/^I verify exam in Marking page$/, () => {
+Then(/^I verify exam in Marking page after submit$/, () => {
+    Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage('Scan_ZTstu01@snapmail.cc')
+})
+
+And(/^I verify exam in the Score page after submit$/, () => {
     // Cypress.ExamPage.()
 })
 
-And(/^I verify exam in the Score page$/, () => {
-    // Cypress.ExamPage.()
-})
-
-And(/^I verify exam in the Publish page and publish score to candidate$/, () => {
+And(/^I verify exam in the Grading page and publish score to candidate after submit$/, () => {
     // Cypress.ExamPage.()
 })
 after(() => {

@@ -78,10 +78,9 @@ Cypress.ExamPage.submitExamSuccess = () => {
         .should('contain.text', submittedMessageText)
     cy.get(submitPage.backToHomePageBtn)
         .should('be.visible')
-        .click()
-    cy.waitLoading()
+    //     .click()
+    // cy.waitLoading()
     cy.wait(3000)
-    cy.logoutApi()
 }
 
 function answerCategoization(answer) {
@@ -102,33 +101,34 @@ function answerFIB() { }
 function answerMultipleDropdown() { }
 function answerTrueFalse() { }
 
-Cypress.ExamPage.verifyResultBeforeCandidateSubmit = () => {
+Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage = (candidateName) => {
     cy.get(examDetail.attendace).should('be.visible').click()
     cy.waitLoading()
     cy.get(examDetail.attendanceChartValue).eq(0)
+        .should('be.visible')
         .should('have.text', expectBeforeSubmit.numSubmitInChart)
     //filter user id
-    cy.get('.attendance-action-header').find(searchBox.searchField).type('Scan_ZTstu01@snapmail.cc' + '{enter}', { delay: 20 })
+    cy.get(examDetail.attendaceHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 20 })
     cy.wait(3000)
     //check value before submit
-    cy.get('#attendanceTable .aui-table-row')
-        .contains('.aui-table-cell-content', 'Candidate name')
+    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
+        .contains(table.tableCellContent, 'User ID')
         .parent()
         .should('be.visible')
         .invoke('attr', 'data-col').then((col) => {
-            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"] a')
+            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"] aui-ellipsis')
                 .should('have.text', expectBeforeSubmit.UserID)
         })
-    cy.get('#attendanceTable .aui-table-row')
-        .contains('.aui-table-cell-content', 'Attendance status')
+    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
+        .contains(table.tableCellContent, 'Attendance status')
         .parent()
         .should('be.visible')
         .invoke('attr', 'data-col').then((col) => {
             cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"]  div:nth-child(2)')
                 .should('have.text', expectBeforeSubmit.AttendanceStatus)
         })
-    cy.get('#attendanceTable .aui-table-row')
-        .contains('.aui-table-cell-content', 'Examination status')
+    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
+        .contains(table.tableCellContent, 'Examination status')
         .parent()
         .should('be.visible')
         .invoke('attr', 'data-col').then((col) => {
@@ -136,6 +136,11 @@ Cypress.ExamPage.verifyResultBeforeCandidateSubmit = () => {
                 .should('have.text', expectBeforeSubmit.ExaminationStatus)
         })
 
+}
+
+Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage = (candidateName) => {
+    cy.get(examDetail.marking).should('be.visible').click()
+    cy.waitLoading()
 }
 
 Cypress.ExamPage.filterExamHasNameAndViewDetail = (examName) => {
@@ -147,7 +152,7 @@ Cypress.ExamPage.filterExamHasNameAndViewDetail = (examName) => {
     cy.wait(3000)
 }
 
-Cypress.ExamPage.verifyResultAfterCandidateSubmit = (candidateName) => {
+Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage = (candidateName) => {
     cy.get(examDetail.attendace).should('be.visible').click()
     cy.waitLoading()
     cy.get(examDetail.attendanceChartValue).eq(0)
@@ -181,6 +186,12 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmit = (candidateName) => {
             cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"]  div:nth-child(2)')
                 .should('have.text', expectAfterSubmit.ExaminationStatus)
         })
+
+}
+
+Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage = (candidateName) => {
+    cy.get(examDetail.marking).should('be.visible').click()
+    cy.waitLoading()
 
 }
 
