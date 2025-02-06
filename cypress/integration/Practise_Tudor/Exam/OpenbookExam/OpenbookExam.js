@@ -43,9 +43,9 @@ before(() => {
     cy.fixture("question").then(($q) => {
         $q.forEach(($ques, index) => {
             if (index % 2 === 0) {
-                ques1.push($ques); // Add to Section A
+                ques1.push($ques)
             } else {
-                ques2.push($ques); // Add to Section B
+                ques2.push($ques)
             }
         })
     }).then(() => {
@@ -74,7 +74,7 @@ And(/^I answer all the questions$/, () => {
 })
 
 Then(/^I verify candidate submitting the answers normally$/, () => {
-    // Cypress.ExamPage.delteteExamCreated(examBody.examName)
+    Cypress.ExamPage.submitExamSuccess()
 })
 
 after(() => {

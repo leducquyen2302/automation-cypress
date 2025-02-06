@@ -1,8 +1,11 @@
 import { searchBox, dialog } from '../../css/common.constants'
-import { examButton, instructionPage, takingPage } from '../../css/Exam/exam.constants'
+import { examButton, instructionPage, takingPage, submitPage } from '../../css/Exam/exam.constants'
+
+import '@4tw/cypress-drag-drop'
 
 Cypress.ExamPage = Cypress.ExamPage || {}
 
+let submittedMessageText = 'You have submitted the answers and ended your exam!'
 Cypress.ExamPage.createExamForCourse = (courseCode, paperName, paperBody, examBody) => {
     // cy.log('examBody   = ' + JSON.stringify(examBody))
     cy.createExamAndPublishExamByAPI(courseCode, paperName, paperBody, examBody)
@@ -37,7 +40,7 @@ Cypress.ExamPage.goToInstructionsPageOfExam = (examName) => {
 
 Cypress.ExamPage.enterExam = () => {
     //enter exam 
-    cy.wait(2000)
+    cy.wait(3000)
     cy.get(instructionPage.button).should('be.visible').click()
     // cy.get(dialog.modal).find('aui-button').eq(1).click()
     cy.wait(1000)
@@ -47,32 +50,38 @@ Cypress.ExamPage.enterExam = () => {
 }
 
 Cypress.ExamPage.answerAllQuestions = () => {
-    answerCategoization('')
+    // answerCategoization('')
     cy.get(takingPage.nextQuestion).eq(1).click()
+    cy.contains('Submit and end exam').should('be.visible').click()
+    cy.contains('End exam').should('be.visible').click()
+    cy.waitLoading()
+}
+
+Cypress.ExamPage.submitExamSuccess = () => {
+
+    cy.get(submitPage.submitedIcon)
+        .should('be.visible')
+        .should('have.attr', 'src', '/taking/resources/images/examapp-completed-succ.svg')
+    cy.get(submitPage.submitMessage)
+        .should('contain.text', submittedMessageText)
+    cy.get(submitPage.backToHomePageBtn)
+        .should('be.visible')
+        .click()
+    cy.waitLoading()
     cy.wait(3000)
+
 }
 
 function answerCategoization(answer) {
     if (answer === '') {
-        // cy.get(takingPage.optionCategory).each(options => {
-        //     cy.get(options).drag(takingPage.categoryDropArea)
-
-        // })
-        cy.get(takingPage.optionCategory).eq(0).drag(takingPage.categoryDropArea).wait(1000)
-    } 
-    // else {
-    //     cy.get(takingPage.optionCategory).contains(answer).click()
-    //     cy.get(takingPage.categoryDropArea)
-    //         .trigger('mousemove')
-    //         .trigger('mouseup', { force: true })
-    // }
+        cy.wait(3000)
+        cy.get('.drop-area-from-option [style="display: block;"] .drag-option').eq(0)
+            .drag('.options-order-column .order-options-item:nth-child(1)').wait(1000)
+    }
     cy.wait(2000)
 }
 
-function answerMultipleChoice(answer) {
-
-
-}
+function answerMultipleChoice(answer) { }
 function fileUpload() { }
 function answerMatching() { }
 function answerSingleChoice() { }
@@ -80,6 +89,7 @@ function answerEssay() { }
 function answerFIB() { }
 function answerMultipleDropdown() { }
 function answerTrueFalse() { }
+
 Cypress.ExamPage.delteteExamCreated = (examName) => {
     cy.deleteExamByAPI(examName)
     cy.log('delete exam name   = ' + JSON.stringify(examName))

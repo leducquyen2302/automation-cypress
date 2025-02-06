@@ -211,29 +211,5 @@
             "topics": [],
             "uniqueId": "8c3251fc-0000-4c81-8c1a-cfa194a012de"
         }
-    },
-    {
-        "question": {
-            "difficulty": 0,
-            "markingScheme": "{\"markingScheme\":\"\",\"correctAnswer\":true,\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
-            "settings": "{}",
-            "status": 2,
-            "subQuestionIndex": "",
-            "title": "",
-            "content": "T/F question",
-            "richContent": "T/F question",
-            "chineseContent": "",
-            "chineseRichContent": "",
-            "questionType": 2,
-            "fullMarks": 1,
-            "additionalMarks": null,
-            "additionalMarksContent": "",
-            "totalMarks": 1,
-            "expanderStatus": {
-                "show": true
-            },
-            "topics": [],
-            "uniqueId": "c207fa31-80eb-49cf-aa41-8ee5d3c256ea"
-        }
     }
 ]

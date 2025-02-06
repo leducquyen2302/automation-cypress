@@ -22,7 +22,7 @@
             "name": "I login as candidate and go to instructions page",
             "result": {
               "status": "passed",
-              "duration": 65453000000
+              "duration": 47713000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I enter a openbook exam",
             "result": {
               "status": "passed",
-              "duration": 3550000000
+              "duration": 4424000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "I answer all the questions",
             "result": {
               "status": "passed",
-              "duration": 12407000000
+              "duration": 2655000000
             }
           },
           {
@@ -52,7 +52,7 @@
             "name": "I verify candidate submitting the answers normally",
             "result": {
               "status": "passed",
-              "duration": 34000000
+              "duration": 6197000000
             }
           }
         ]
