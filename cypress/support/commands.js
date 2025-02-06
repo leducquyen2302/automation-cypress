@@ -2847,6 +2847,7 @@ function createPaper(auth, courseId, paperName, section) {
 }
 
 Cypress.Commands.add('createExamStep1ByAPI', (auth, body) => {
+    cy.log('body create:    '+ JSON.stringify(body))
     cy.request({
         url: auth.apiUrl + '/schedule/api/exam',
         method: 'POST',

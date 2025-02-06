@@ -6,11 +6,11 @@ Feature: Openbook exam
         And I answer all the questions
         Then I verify candidate submitting the answers normally
 
-    # Scenario: Course manager verify result after taking    
-    #     Then I login as course management verify in the Attendance page
-    #     And I verify exam in Marking page
-    #     And I verify exam in the Score page
-    #     And I verify exam in the Publish page and publish score to candidate
+    Scenario: Course manager verify result after taking    
+        Given I login as course management verify in the Attendance page
+        And I verify exam in Marking page
+        And I verify exam in the Score page
+        And I verify exam in the Publish page and publish score to candidate
 
     # Scenario: Candidate check score after published
     #     Given I login as candidate view detail exam taken

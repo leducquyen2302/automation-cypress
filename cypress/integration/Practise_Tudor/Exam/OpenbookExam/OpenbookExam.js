@@ -54,7 +54,6 @@ before(() => {
     })
 })
 
-
 // When(/^I prepare a new Openbook exam before taking the exam$/, () => {
 //     Cypress.ExamPage.createExamForCourse()
 // })
@@ -77,6 +76,24 @@ Then(/^I verify candidate submitting the answers normally$/, () => {
     Cypress.ExamPage.submitExamSuccess()
 })
 
+Given(/^I login as course management verify in the Attendance page$/, () => {
+    cy.LoginExamAsSystem()
+    Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
+    Cypress.ExamPage.verifyResultAfterCandidateSubmit('Scan_ZTstu01@snapmail.cc')
+
+})
+
+Then(/^I verify exam in Marking page$/, () => {
+    // Cypress.ExamPage.()
+})
+
+And(/^I verify exam in the Score page$/, () => {
+    // Cypress.ExamPage.()
+})
+
+And(/^I verify exam in the Publish page and publish score to candidate$/, () => {
+    // Cypress.ExamPage.()
+})
 after(() => {
     Cypress.ExamPage.delteteExamCreated(examBody.examName)
 })

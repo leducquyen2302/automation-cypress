@@ -22,7 +22,7 @@
             "name": "I login as candidate and go to instructions page",
             "result": {
               "status": "passed",
-              "duration": 47713000000
+              "duration": 48023000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I enter a openbook exam",
             "result": {
               "status": "passed",
-              "duration": 4424000000
+              "duration": 4647000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "I answer all the questions",
             "result": {
               "status": "passed",
-              "duration": 2655000000
+              "duration": 1886000000
             }
           },
           {
@@ -52,7 +52,57 @@
             "name": "I verify candidate submitting the answers normally",
             "result": {
               "status": "passed",
-              "duration": 6197000000
+              "duration": 9437000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "openbook-exam;course-manager-verify-result-after-taking",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Course manager verify result after taking",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I login as course management verify in the Attendance page",
+            "result": {
+              "status": "passed",
+              "duration": 33081000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I verify exam in Marking page",
+            "result": {
+              "status": "passed",
+              "duration": 33000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I verify exam in the Score page",
+            "result": {
+              "status": "passed",
+              "duration": 33000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I verify exam in the Publish page and publish score to candidate",
+            "result": {
+              "status": "passed",
+              "duration": 34000000
             }
           }
         ]
