@@ -8,9 +8,49 @@
     "uri": "OpenbookExam.feature",
     "elements": [
       {
+        "id": "openbook-exam;course-manager-verify-result-before-taking",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Course manager verify result before taking",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I login as course management verify in the Attendance page before submit",
+            "result": {
+              "status": "passed",
+              "duration": 35538000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I verify exam in Marking page before submit",
+            "result": {
+              "status": "passed",
+              "duration": 16570000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I verify exam in the Grading page before submit",
+            "result": {
+              "status": "passed",
+              "duration": 15588000000
+            }
+          }
+        ]
+      },
+      {
         "id": "openbook-exam;candidate-taking-exam",
         "keyword": "Scenario",
-        "line": 2,
+        "line": 8,
         "name": "Candidate taking exam",
         "tags": [],
         "type": "scenario",
@@ -18,41 +58,41 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 4,
+            "line": 9,
             "name": "I login as candidate and go to instructions page",
             "result": {
               "status": "passed",
-              "duration": 48023000000
+              "duration": 34710000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 5,
+            "line": 10,
             "name": "I enter a openbook exam",
             "result": {
               "status": "passed",
-              "duration": 4647000000
+              "duration": 2453000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 6,
+            "line": 11,
             "name": "I answer all the questions",
             "result": {
               "status": "passed",
-              "duration": 1886000000
+              "duration": 3082000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 7,
+            "line": 12,
             "name": "I verify candidate submitting the answers normally",
             "result": {
               "status": "passed",
-              "duration": 9437000000
+              "duration": 6156000000
             }
           }
         ]
@@ -60,7 +100,7 @@
       {
         "id": "openbook-exam;course-manager-verify-result-after-taking",
         "keyword": "Scenario",
-        "line": 9,
+        "line": 14,
         "name": "Course manager verify result after taking",
         "tags": [],
         "type": "scenario",
@@ -68,41 +108,59 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 10,
-            "name": "I login as course management verify in the Attendance page",
+            "line": 15,
+            "name": "I login as course management verify in the Attendance page after submit",
             "result": {
               "status": "passed",
-              "duration": 33081000000
+              "duration": 21705000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 11,
-            "name": "I verify exam in Marking page",
+            "line": 16,
+            "name": "I verify exam in Marking page after submit",
             "result": {
               "status": "passed",
-              "duration": 33000000
+              "duration": 11970000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 12,
-            "name": "I verify exam in the Score page",
+            "line": 17,
+            "name": "I verify exam in the Grading page and publish score to candidate after submit",
             "result": {
-              "status": "passed",
-              "duration": 33000000
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 50000ms: `cy.type()` failed because this element:\n\n`<input class=\"input\" data-tooltip=\"ifneed\" placeholder=\"Search by candidate ID and name or user ID\" aria-controls=\"\" aria-labelledby=\"\" type=\"search\" enterkeyhint=\"search\" aria-disabled=\"false\" value=\"\" maxlength=\"255\">`\n\nis being covered by another element:\n\n`<div id=\"aui-backdrop-434\" class=\"aui-backdrop aui-backdrop-view-all\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n    at $Cy.ensureDescendents (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:164061:78)\n    at ensureDescendents (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150268:8)\n    at ensureDescendentsAndScroll (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150275:14)\n    at ensureElIsNotCovered (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150407:5)\n    at runAllChecks (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150597:52)\n    at retryActionability (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150621:16)\nFrom previous event:\n    at whenStable (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:168785:63)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:168282:14\nFrom Your Spec Code:\n    at Cypress.ExamPage.publishScoreOfCandidate (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:344:78)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:138:20)\n    at Context.resolveAndRunStepDefinition (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:10565:29)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:9886:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "openbook-exam;candidate-check-score-after-published",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Candidate check score after published",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 20,
+            "name": "I login as candidate view detail exam taken",
+            "result": {
+              "status": "undefined"
             }
           },
           {
             "arguments": [],
-            "keyword": "And ",
-            "line": 13,
-            "name": "I verify exam in the Publish page and publish score to candidate",
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I check the score is correct",
             "result": {
-              "status": "passed",
-              "duration": 34000000
+              "status": "skipped"
             }
           }
         ]

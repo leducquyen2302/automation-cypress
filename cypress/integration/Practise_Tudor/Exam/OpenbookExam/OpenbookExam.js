@@ -1,3 +1,6 @@
+import {examDetail } from '../../helper/css/Exam/exam.constants'
+
+
 // let startDate = new Date();
 // startDate.setMinutes(startDate.getMinutes() + 2)
 // startDate.setSeconds(0)
@@ -12,6 +15,10 @@
 // let startDateISO = startDate.toISOString();
 // let endDateISO = endDate.toISOString();
 
+let candidate1 = {
+    name: 'Scan_ztstu01',
+    userId: 'Scan_ZTstu01@snapmail.cc'
+}
 
 let ques1 = []
 let ques2 = []
@@ -59,21 +66,22 @@ Given(/^I login as course management verify in the Attendance page before submit
     Cypress.ExamPage.createExamForCourse('ZT-course01', 'TutuPaper_' + date, paperBody, examBody)
     cy.LoginExamAsSystem()
     Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
-    Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage('Scan_ZTstu01@snapmail.cc')
+    Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage(candidate1.userId)
 })
 
 And(/^I verify exam in Marking page before submit$/, () => {
-    Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage('Scan_ZTstu01@snapmail.cc')
+    Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage(candidate1.name)
 })
-And(/^ verify exam in the Grading page and publish score to candidate before submit$/, () => {
-    
+
+And(/^I verify exam in the Grading page before submit$/, () => {
+    Cypress.ExamPage.verifyResultBeforeCandidateSubmitGradingPage(candidate1.userId)
     cy.logoutApi()
 })
 
 
 //Scenario: Candidate taking exam
 And(/^I login as candidate and go to instructions page$/, () => {
-    cy.LoginByLocal('Scan_ZTstu01@snapmail.cc')
+    cy.LoginByLocal(candidate1.userId)
     Cypress.ExamPage.goToInstructionsPageOfExam(examBody.examName)
 })
 
@@ -95,21 +103,26 @@ Then(/^I verify candidate submitting the answers normally$/, () => {
 Given(/^I login as course management verify in the Attendance page after submit$/, () => {
     cy.LoginExamAsSystem()
     Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
-    Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage('Scan_ZTstu01@snapmail.cc')
+    Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage(candidate1.userId)
 
 })
 
 Then(/^I verify exam in Marking page after submit$/, () => {
-    Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage('Scan_ZTstu01@snapmail.cc')
-})
-
-And(/^I verify exam in the Score page after submit$/, () => {
-    // Cypress.ExamPage.()
+    Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage(candidate1.name)
 })
 
 And(/^I verify exam in the Grading page and publish score to candidate after submit$/, () => {
-    // Cypress.ExamPage.()
+    cy.get(examDetail.grading).should('be.visible').click()
+    cy.waitLoading()
+
+    Cypress.ExamPage.unpublishScoreAll()
+
+    Cypress.ExamPage.publishScoreOfCandidate(candidate1.userId)
+    
+    Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage(candidate1.userId)
+    cy.logoutApi()
 })
-after(() => {
-    Cypress.ExamPage.delteteExamCreated(examBody.examName)
-})
+
+// after(() => {
+//     Cypress.ExamPage.delteteExamCreated(examBody.examName)
+// })

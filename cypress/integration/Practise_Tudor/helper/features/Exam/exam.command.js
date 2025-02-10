@@ -1,21 +1,28 @@
 import { searchBox, dialog, table } from '../../css/common.constants'
 import { examButton, instructionPage, takingPage, submitPage, examPage, examDetail } from '../../css/Exam/exam.constants'
 
-import '@4tw/cypress-drag-drop'
-
 Cypress.ExamPage = Cypress.ExamPage || {}
 
 const expectBeforeSubmit = {
     numSubmitInChart: '0',
     UserID: 'Scan_ZTstu01@snapmail.cc',
-    AttendanceStatus: 'Not started',
-    ExaminationStatus: 'Not started'
+    attendanceStatus: 'Not started',
+    examinationStatus: 'Not started',
+    submissionStatus: 'Not submitted',
+    totalScore: '',
+    publishStatus: 'Not published',
+    publishTime: '',
+
 }
 const expectAfterSubmit = {
     numSubmitInChart: '1',
     UserID: 'Scan_ZTstu01@snapmail.cc',
-    AttendanceStatus: 'Present',
-    ExaminationStatus: 'Submitted'
+    attendanceStatus: 'Present',
+    examinationStatus: 'Submitted',
+    submissionStatus: 'Submitted',
+    totalScore: '0',
+    publishStatus: 'Published',
+    publishTime: '',
 }
 
 let submittedMessageText = 'You have submitted the answers and ended your exam!'
@@ -52,10 +59,11 @@ Cypress.ExamPage.goToInstructionsPageOfExam = (examName) => {
 
 Cypress.ExamPage.enterExam = () => {
     //enter exam 
-    cy.wait(3000)
+    cy.waitLoading()
+    cy.wait(2000)
     cy.get(instructionPage.button).should('be.visible').click()
     // cy.get(dialog.modal).find('aui-button').eq(1).click()
-    cy.wait(1000)
+    cy.waitLoading()
     // //accept share screen
     // cy.get(takingPage.shareScreenDialog).should('be.visible').find('button').click()
     // cy.wait(2000)
@@ -63,7 +71,7 @@ Cypress.ExamPage.enterExam = () => {
 
 Cypress.ExamPage.answerAllQuestions = () => {
     // answerCategoization('')
-    cy.get(takingPage.nextQuestion).eq(1).click()
+    cy.get(takingPage.nextQuestion).eq(1).click().wait(1000)
     cy.contains('Submit and end exam').should('be.visible').click()
     cy.contains('End exam').should('be.visible').click()
     cy.waitLoading()
@@ -107,49 +115,55 @@ Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage = (candidateNam
     cy.get(examDetail.attendanceChartValue).eq(0)
         .should('be.visible')
         .should('have.text', expectBeforeSubmit.numSubmitInChart)
+
     //filter user id
     cy.get(examDetail.attendaceHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 20 })
-    cy.wait(3000)
+    cy.waitLoading()
+
     //check value before submit
-    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
-        .contains(table.tableCellContent, 'User ID')
-        .parent()
-        .should('be.visible')
-        .invoke('attr', 'data-col').then((col) => {
-            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"] aui-ellipsis')
-                .should('have.text', expectBeforeSubmit.UserID)
-        })
-    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
-        .contains(table.tableCellContent, 'Attendance status')
-        .parent()
-        .should('be.visible')
-        .invoke('attr', 'data-col').then((col) => {
-            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"]  div:nth-child(2)')
-                .should('have.text', expectBeforeSubmit.AttendanceStatus)
-        })
-    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
-        .contains(table.tableCellContent, 'Examination status')
-        .parent()
-        .should('be.visible')
-        .invoke('attr', 'data-col').then((col) => {
-            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"]  div:nth-child(2)')
-                .should('have.text', expectBeforeSubmit.ExaminationStatus)
-        })
+    cy.verifyCellValueOfTable(examDetail.attendanceTable, 'User ID', expectBeforeSubmit.UserID, 1)
+    cy.verifyCellValueOfTable(examDetail.attendanceTable, 'Attendance status', expectBeforeSubmit.attendanceStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.attendanceTable, 'Examination status', expectBeforeSubmit.examinationStatus, 1)
 
 }
 
 Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage = (candidateName) => {
     cy.get(examDetail.marking).should('be.visible').click()
     cy.waitLoading()
+    //filter candidate name
+    cy.get(examDetail.markingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
+    cy.waitLoading()
+
+    cy.verifyCellValueOfTable(examDetail.markingTable, 'User ID', expectBeforeSubmit.UserID, 1)
+    cy.verifyCellValueOfTable(examDetail.markingTable, 'Submission status', expectBeforeSubmit.submissionStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.markingTable, 'Total score', expectBeforeSubmit.totalScore, 1)
+
+}
+
+Cypress.ExamPage.verifyResultBeforeCandidateSubmitGradingPage = (candidateName) => {
+    cy.get(examDetail.grading).should('be.visible').click()
+    cy.waitLoading()
+    //filter candidate name
+    cy.get(examDetail.gradingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
+    cy.waitLoading()
+
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'User ID', expectBeforeSubmit.UserID, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Attendance status', expectBeforeSubmit.attendanceStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Submission status', expectBeforeSubmit.submissionStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Total score', expectBeforeSubmit.totalScore, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Publish status', expectBeforeSubmit.publishStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Publish time', expectBeforeSubmit.publishTime, 1)
+
+
 }
 
 Cypress.ExamPage.filterExamHasNameAndViewDetail = (examName) => {
     Cypress.CommonPage.clickLeftNavigation('Exam')
     cy.waitLoading()
-    cy.get(searchBox.searchField).eq(0).type(examName + '{enter}', { delay: 10 })
+    cy.get(searchBox.searchField).should('be.visible').eq(0).type(examName + '{enter}', { delay: 10 })
     cy.waitLoading()
     cy.get(examPage.examName).eq(0).click()
-    cy.wait(3000)
+    cy.waitLoading()
 }
 
 Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage = (candidateName) => {
@@ -160,40 +174,64 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage = (candidateName
         .should('have.text', expectAfterSubmit.numSubmitInChart)
     //filter user id
     cy.get(examDetail.attendaceHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 20 })
-    cy.wait(3000)
-    //check value before submit
-    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
-        .contains(table.tableCellContent, 'User ID')
-        .parent()
-        .should('be.visible')
-        .invoke('attr', 'data-col').then((col) => {
-            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"] aui-ellipsis')
-                .should('have.text', expectAfterSubmit.UserID)
-        })
-    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
-        .contains(table.tableCellContent, 'Attendance status')
-        .parent()
-        .should('be.visible')
-        .invoke('attr', 'data-col').then((col) => {
-            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"]  div:nth-child(2)')
-                .should('have.text', expectAfterSubmit.AttendanceStatus)
-        })
-    cy.get(examDetail.attendanceTable + ' ' + table.tableRow)
-        .contains(table.tableCellContent, 'Examination status')
-        .parent()
-        .should('be.visible')
-        .invoke('attr', 'data-col').then((col) => {
-            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"]  div:nth-child(2)')
-                .should('have.text', expectAfterSubmit.ExaminationStatus)
-        })
-
+    cy.waitLoading()
+    //check value after submit
+    cy.verifyCellValueOfTable(examDetail.attendanceTable, 'User ID', expectAfterSubmit.UserID, 1)
+    cy.verifyCellValueOfTable(examDetail.attendanceTable, 'Attendance status', expectAfterSubmit.attendanceStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.attendanceTable, 'Examination status', expectAfterSubmit.examinationStatus, 1)
 }
 
 Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage = (candidateName) => {
     cy.get(examDetail.marking).should('be.visible').click()
     cy.waitLoading()
+    //filter candidate name
+    cy.get(examDetail.markingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
+    cy.waitLoading()
+
+    cy.verifyCellValueOfTable(examDetail.markingTable, 'User ID', expectAfterSubmit.UserID, 1)
+    cy.verifyCellValueOfTable(examDetail.markingTable, 'Submission status', expectAfterSubmit.submissionStatus, 1)
+    // cy.verifyCellValueOfTable(examDetail.markingTable, 'Total score', expectAfterSubmit.totalScore, 1)
 
 }
+
+Cypress.ExamPage.unpublishScoreAll = () => {
+    cy.get(examDetail.unpublish).should('be.visible').click()
+    cy.contains('Unpublish results for all').should('be.visible').click()
+    cy.get('.aui-dialog-modal aui-button[text="Unpublish"]')
+        .should('be.visible')
+        .click().wait(1000)
+    cy.waitLoading()
+}
+
+Cypress.ExamPage.publishScoreOfCandidate = (candidateName) => {
+    //filter candidate name
+    cy.get(examDetail.gradingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
+    cy.waitLoading()
+
+    cy.contains(candidateName)
+        .invoke('attr', 'data-cell')
+        .then((dataCell) => {
+            const row = dataCell.split(',')[0]
+            cy.get('.aui-table-row[data-row="' + row + '"] [name="MarkScoreList-Checkbox"]').eq(0).click
+        })
+    cy.get(examDetail.publishScore).click()
+    cy.contains('Publish to selected candidates').should('be.visible').click()
+    cy.get('.aui-dialog-modal aui-button[text="Publish"]')
+        .should('be.visible')
+        .click().wait(1000)
+    cy.waitLoading()
+}
+
+Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage = (candidateName) => {
+
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'User ID', expectAfterSubmit.UserID, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Attendance status', expectAfterSubmit.attendanceStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Submission status', expectAfterSubmit.submissionStatus, 1)
+    cy.verifyCellValueOfTable(examDetail.gradingTable, 'Total score', expectAfterSubmit.totalScore, 1)
+    // cy.verifyCellValueOfTable(examDetail.gradingTable, 'Publish status', expectAfterSubmit.publishStatus, 1)
+    // cy.verifyCellValueOfTable(examDetail.gradingTable, 'Publish time', expectAfterSubmit.publishTime, 1)
+}
+
 
 Cypress.ExamPage.delteteExamCreated = (examName) => {
     cy.deleteExamByAPI(examName)
@@ -204,6 +242,9 @@ Cypress.ExamPage.deltetePaperCreated = () => {
     cy.deletePaperByAPI('TutuPaper_' + date)
     cy.log('delete paper name   = ' + 'TutuPaper_' + date)
 }
+
+
+
 
 
 

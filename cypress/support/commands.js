@@ -2847,7 +2847,7 @@ function createPaper(auth, courseId, paperName, section) {
 }
 
 Cypress.Commands.add('createExamStep1ByAPI', (auth, body) => {
-    cy.log('body create:    '+ JSON.stringify(body))
+    cy.log('body create:    ' + JSON.stringify(body))
     cy.request({
         url: auth.apiUrl + '/schedule/api/exam',
         method: 'POST',
@@ -3078,4 +3078,20 @@ Cypress.Commands.add('getPaperIdByName', (auth, paperName) => {
             "timezoneOffset": -420
         }
     })
+})
+
+Cypress.Commands.add('verifyCellValueOfTable', (table, columnName, expectValue, numberRoleCheck) => {
+    cy.get(table + ' .aui-table-row')
+        .contains('.aui-table-cell-content', columnName)
+        .parent()
+        .should('be.visible')
+        .invoke('attr', 'data-col').then((col) => {
+            if (numberRoleCheck !== null && numberRoleCheck !== '') {
+                for (let i = 1; i <= numberRoleCheck; i++) {
+                    cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="' + i + ',' + col + '"]')
+                        .scrollIntoView({ easing: 'linear', duration: 500 })
+                        .should('have.text', expectValue)
+                }
+            }
+        })
 })

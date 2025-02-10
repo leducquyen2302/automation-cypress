@@ -31,5 +31,12 @@ export const examDetail = {
     attendanceChartValue : '.aui-chart-legend-value',
     attendanceTable : '#attendanceTable',
     attendaceHeader : '.attendance-action-header',
-
+    markingHeader : '.making-progress-sticky',
+    markingTable : '#MarkScoreList_candidate',
+    gradingHeader : '.making-grading-sticky',
+    gradingTable : '#MarkScoreList',
+    checkboxGradingTable : '[name="MarkScoreList-Checkbox"]',
+    unpublish : '#exam-unpublish-btn',
+    publishScore : '#publish-group',
+    
 }
