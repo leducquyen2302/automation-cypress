@@ -22,7 +22,7 @@
             "name": "I login as course management verify in the Attendance page before submit",
             "result": {
               "status": "passed",
-              "duration": 35538000000
+              "duration": 35968000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I verify exam in Marking page before submit",
             "result": {
               "status": "passed",
-              "duration": 16570000000
+              "duration": 13978000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "I verify exam in the Grading page before submit",
             "result": {
               "status": "passed",
-              "duration": 15588000000
+              "duration": 18663000000
             }
           }
         ]
@@ -62,7 +62,7 @@
             "name": "I login as candidate and go to instructions page",
             "result": {
               "status": "passed",
-              "duration": 34710000000
+              "duration": 10399000000
             }
           },
           {
@@ -72,7 +72,7 @@
             "name": "I enter a openbook exam",
             "result": {
               "status": "passed",
-              "duration": 2453000000
+              "duration": 4770000000
             }
           },
           {
@@ -82,7 +82,7 @@
             "name": "I answer all the questions",
             "result": {
               "status": "passed",
-              "duration": 3082000000
+              "duration": 3016000000
             }
           },
           {
@@ -92,7 +92,7 @@
             "name": "I verify candidate submitting the answers normally",
             "result": {
               "status": "passed",
-              "duration": 6156000000
+              "duration": 6023000000
             }
           }
         ]
@@ -112,7 +112,7 @@
             "name": "I login as course management verify in the Attendance page after submit",
             "result": {
               "status": "passed",
-              "duration": 21705000000
+              "duration": 23307000000
             }
           },
           {
@@ -122,7 +122,7 @@
             "name": "I verify exam in Marking page after submit",
             "result": {
               "status": "passed",
-              "duration": 11970000000
+              "duration": 12943000000
             }
           },
           {
@@ -131,8 +131,8 @@
             "line": 17,
             "name": "I verify exam in the Grading page and publish score to candidate after submit",
             "result": {
-              "status": "failed",
-              "error_message": "CypressError: Timed out retrying after 50000ms: `cy.type()` failed because this element:\n\n`<input class=\"input\" data-tooltip=\"ifneed\" placeholder=\"Search by candidate ID and name or user ID\" aria-controls=\"\" aria-labelledby=\"\" type=\"search\" enterkeyhint=\"search\" aria-disabled=\"false\" value=\"\" maxlength=\"255\">`\n\nis being covered by another element:\n\n`<div id=\"aui-backdrop-434\" class=\"aui-backdrop aui-backdrop-view-all\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n    at $Cy.ensureDescendents (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:164061:78)\n    at ensureDescendents (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150268:8)\n    at ensureDescendentsAndScroll (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150275:14)\n    at ensureElIsNotCovered (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150407:5)\n    at runAllChecks (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150597:52)\n    at retryActionability (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150621:16)\nFrom previous event:\n    at whenStable (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:168785:63)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:168282:14\nFrom Your Spec Code:\n    at Cypress.ExamPage.publishScoreOfCandidate (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:344:78)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:138:20)\n    at Context.resolveAndRunStepDefinition (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:10565:29)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:9886:35)"
+              "status": "passed",
+              "duration": 23410000000
             }
           }
         ]
@@ -151,16 +151,18 @@
             "line": 20,
             "name": "I login as candidate view detail exam taken",
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 5706000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 21,
-            "name": "I check the score is correct",
+            "name": "I check the published score is correct",
             "result": {
-              "status": "skipped"
+              "status": "failed",
+              "error_message": "ReferenceError: text is not defined\n    at Cypress.ExamPage.candidateVerifyPublishedScoreOfExam (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:464:62)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:151:20)\n    at Context.resolveAndRunStepDefinition (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:10581:29)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:9902:35)\nFrom previous event:\n    at Context.thenFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173242:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172077:8)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172249:16"
             }
           }
         ]

@@ -2783,7 +2783,34 @@ Cypress.Commands.add('createPaper_byAPI', (courseId, paperName, section) => {
         createPaper(auth, courseId, paperName, section)
     })
 })
+function examPaper(auth, paperId, examId) {
+    cy.request({
+        url: auth.apiUrl + '/authoring/api/open/exampaper?paperId=' + paperId + '&examId=' + examId,
+        method: 'GET',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        },
+        body: {}
+    })
+}
 
+function invigllatorstepsave(auth, examId) {
+    cy.request({
+        url: auth.apiUrl + '/schedule/api/invigilator/invigllatorstepsave',
+        method: 'POST',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        },
+        body: {
+            "examId": examId,
+            "enableResubmissionChecked": true,
+            "timezoneOffset": -420
+        }
+
+    })
+}
 
 function getPaperBody(courseId, paperName, sect, appendix) {
     let paperBody = {
@@ -2880,6 +2907,9 @@ Cypress.Commands.add('createExamAndPublishExamByAPI', (courseCode, paperName, se
                 //get exam Id
                 let exmId = $res2.body.id
                 cy.log('exam ID is: ' + exmId)
+
+                invigllatorstepsave(auth, exmId)
+
                 //Create paper
                 cy.createPaper_byAPI(cId, paperName, section).then(($res3) => {
                     cy.log('Response Body Create Paper: ' + JSON.stringify($res3.body))
@@ -2888,6 +2918,7 @@ Cypress.Commands.add('createExamAndPublishExamByAPI', (courseCode, paperName, se
 
                     //Add paper
                     addPaperToExam(auth, exmId, paperId)
+                    examPaper(auth, paperId, exmId)
                     //Publish exam
                     publishExam(auth, exmId)
                     cy.log('create and publist exam successfully')
@@ -3080,18 +3111,26 @@ Cypress.Commands.add('getPaperIdByName', (auth, paperName) => {
     })
 })
 
-Cypress.Commands.add('verifyCellValueOfTable', (table, columnName, expectValue, numberRoleCheck) => {
+Cypress.Commands.add('verifyCellValueOfTable', (col, expectValue, numberRoleCheck) => {
+    if (numberRoleCheck !== null && numberRoleCheck !== '') {
+        for (let i = 1; i <= numberRoleCheck; i++) {
+            cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="' + i + ',' + col + '"]')
+                .scrollIntoView({ easing: 'linear', duration: 500 })
+                .invoke('text')
+                .should('contain', expectValue)
+                .then((text) => {
+                    cy.log('text        :' + text)
+                    cy.wrap(text).should('contain', expectValue)
+                })
+        }
+    }
+})
+
+
+Cypress.Commands.add('getColumnOfTable', (table, columnName) => {
     cy.get(table + ' .aui-table-row')
         .contains('.aui-table-cell-content', columnName)
         .parent()
         .should('be.visible')
-        .invoke('attr', 'data-col').then((col) => {
-            if (numberRoleCheck !== null && numberRoleCheck !== '') {
-                for (let i = 1; i <= numberRoleCheck; i++) {
-                    cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="' + i + ',' + col + '"]')
-                        .scrollIntoView({ easing: 'linear', duration: 500 })
-                        .should('have.text', expectValue)
-                }
-            }
-        })
+        .invoke('attr', 'data-col')
 })

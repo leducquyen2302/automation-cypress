@@ -18,4 +18,4 @@ Feature: Openbook exam
 
     Scenario: Candidate check score after published
         Given I login as candidate view detail exam taken
-        Then I check the score is correct
+        Then I check the published score is correct

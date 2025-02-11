@@ -1,4 +1,4 @@
-import {examDetail } from '../../helper/css/Exam/exam.constants'
+import { examDetail } from '../../helper/css/Exam/exam.constants'
 
 
 // let startDate = new Date();
@@ -39,6 +39,8 @@ let paperBody = [{
     "questions": ques2
 }]
 let examBody = {}
+let score = ''
+let totalScore = ''
 
 before(() => {
     cy.fixture('exam').then((examInf) => {
@@ -81,6 +83,7 @@ And(/^I verify exam in the Grading page before submit$/, () => {
 
 //Scenario: Candidate taking exam
 And(/^I login as candidate and go to instructions page$/, () => {
+    // Cypress.ExamPage.createExamForCourse('ZT-course01', 'TutuPaper_' + date, paperBody, examBody)
     cy.LoginByLocal(candidate1.userId)
     Cypress.ExamPage.goToInstructionsPageOfExam(examBody.examName)
 })
@@ -118,11 +121,21 @@ And(/^I verify exam in the Grading page and publish score to candidate after sub
     Cypress.ExamPage.unpublishScoreAll()
 
     Cypress.ExamPage.publishScoreOfCandidate(candidate1.userId)
-    
-    Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage(candidate1.userId)
+
+    score = Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage(candidate1.userId)
     cy.logoutApi()
 })
 
-// after(() => {
-//     Cypress.ExamPage.delteteExamCreated(examBody.examName)
-// })
+Then(/^I login as candidate view detail exam taken$/, () => {
+    cy.LoginByLocal(candidate1.userId)
+    Cypress.CommonPage.clickLeftNavigation('Exam')
+    cy.waitLoading()
+})
+
+And(/^I check the published score is correct$/, () => {
+    Cypress.ExamPage.candidateVerifyPublishedScoreOfExam(examBody.enterExam)
+})
+
+after(() => {
+    Cypress.ExamPage.delteteExamCreated(examBody.examName)
+})

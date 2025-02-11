@@ -19,6 +19,8 @@ export const submitPage = {
 }
 export const examPage = {
     examName : '.exam-card-content a',
+    examScore : '.exam-card-info-markscore',
+    viewResultBtn : '.exam-card-footer button[aria-label="View results"]',
 }
 
 export const examDetail = {
@@ -39,4 +41,10 @@ export const examDetail = {
     unpublish : '#exam-unpublish-btn',
     publishScore : '#publish-group',
     
+}
+
+export const viewResult = {
+    score : '.basic-info-label[aria-label ="Total score"] + div .basic-info-value-inline',
+    status : '.basic-info-label[aria-label ="Status"] + div .basic-info-value-inline',
+
 }
