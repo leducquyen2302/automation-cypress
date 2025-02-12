@@ -22,7 +22,7 @@
             "name": "I login as course management verify in the Attendance page before submit",
             "result": {
               "status": "passed",
-              "duration": 35968000000
+              "duration": 41566000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I verify exam in Marking page before submit",
             "result": {
               "status": "passed",
-              "duration": 13978000000
+              "duration": 15645000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "I verify exam in the Grading page before submit",
             "result": {
               "status": "passed",
-              "duration": 18663000000
+              "duration": 19866000000
             }
           }
         ]
@@ -62,7 +62,7 @@
             "name": "I login as candidate and go to instructions page",
             "result": {
               "status": "passed",
-              "duration": 10399000000
+              "duration": 11854000000
             }
           },
           {
@@ -72,7 +72,7 @@
             "name": "I enter a openbook exam",
             "result": {
               "status": "passed",
-              "duration": 4770000000
+              "duration": 3537000000
             }
           },
           {
@@ -82,7 +82,7 @@
             "name": "I answer all the questions",
             "result": {
               "status": "passed",
-              "duration": 3016000000
+              "duration": 4114000000
             }
           },
           {
@@ -92,7 +92,7 @@
             "name": "I verify candidate submitting the answers normally",
             "result": {
               "status": "passed",
-              "duration": 6023000000
+              "duration": 6267000000
             }
           }
         ]
@@ -112,7 +112,7 @@
             "name": "I login as course management verify in the Attendance page after submit",
             "result": {
               "status": "passed",
-              "duration": 23307000000
+              "duration": 26980000000
             }
           },
           {
@@ -122,7 +122,7 @@
             "name": "I verify exam in Marking page after submit",
             "result": {
               "status": "passed",
-              "duration": 12943000000
+              "duration": 13804000000
             }
           },
           {
@@ -132,7 +132,7 @@
             "name": "I verify exam in the Grading page and publish score to candidate after submit",
             "result": {
               "status": "passed",
-              "duration": 23410000000
+              "duration": 28591000000
             }
           }
         ]
@@ -152,7 +152,7 @@
             "name": "I login as candidate view detail exam taken",
             "result": {
               "status": "passed",
-              "duration": 5706000000
+              "duration": 7705000000
             }
           },
           {
@@ -161,8 +161,8 @@
             "line": 21,
             "name": "I check the published score is correct",
             "result": {
-              "status": "failed",
-              "error_message": "ReferenceError: text is not defined\n    at Cypress.ExamPage.candidateVerifyPublishedScoreOfExam (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:464:62)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:151:20)\n    at Context.resolveAndRunStepDefinition (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:10581:29)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:9902:35)\nFrom previous event:\n    at Context.thenFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173242:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172077:8)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172249:16"
+              "status": "passed",
+              "duration": 9783000000
             }
           }
         ]

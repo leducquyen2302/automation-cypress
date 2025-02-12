@@ -71,54 +71,6 @@
     {
         "question": {
             "difficulty": 0,
-            "markingScheme": "{\"markingScheme\":\"\",\"modelAnswer\":\"\"}",
-            "settings": "{\"allowRichText\":true,\"responseLimit\":0,\"number\":null,\"optional\":false,\"allowQR\":true,\"displayResponse\":true}",
-            "status": 2,
-            "subQuestionIndex": "",
-            "title": "",
-            "content": "Essay question",
-            "richContent": "Essay question",
-            "chineseContent": "",
-            "chineseRichContent": "",
-            "questionType": 4,
-            "fullMarks": 1,
-            "additionalMarks": null,
-            "additionalMarksContent": "",
-            "totalMarks": 1,
-            "expanderStatus": {
-                "show": true
-            },
-            "topics": [],
-            "uniqueId": "130d0818-074d-4374-82cf-793c817f0e8c"
-        }
-    },
-    {
-        "question": {
-            "difficulty": 0,
-            "markingScheme": "{\"markingScheme\":\"\"}",
-            "settings": "{\"isShowBox\":true,\"allowRichText\":false,\"responseLimit\":0,\"number\":null}",
-            "status": 2,
-            "subQuestionIndex": "",
-            "title": "",
-            "content": "File upload question",
-            "richContent": "File upload question",
-            "chineseContent": "",
-            "chineseRichContent": "",
-            "questionType": 6,
-            "fullMarks": 1,
-            "additionalMarks": null,
-            "additionalMarksContent": "",
-            "totalMarks": 1,
-            "expanderStatus": {
-                "show": true
-            },
-            "topics": [],
-            "uniqueId": "a44cbae0-8b4a-4154-90db-fdfd2193f779"
-        }
-    },
-    {
-        "question": {
-            "difficulty": 0,
             "markingScheme": "{\"correctAnswers\":[[{\"key\":\"blank_1\",\"contents\":[\"1\"],\"marks\":1}]],\"markingScheme\":\"\",\"caseSensitive\":false,\"responseFeedbackType\":0,\"responseFeedbackContent\":{\"correctContent\":\"\",\"wrongContent\":\"\",\"commonContent\":\"\"}}",
             "settings": "{\"blanks\":[[{\"key\":\"blank_1\",\"contents\":[],\"marks\":1}]],\"markingMethod\":1}",
             "status": 2,

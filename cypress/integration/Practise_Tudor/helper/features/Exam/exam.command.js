@@ -1,5 +1,5 @@
 import { searchBox, dialog, table } from '../../css/common.constants'
-import { examButton, instructionPage, takingPage, submitPage, examPage, examDetail, viewResult } from '../../css/Exam/exam.constants'
+import { markingPage, examButton, instructionPage, takingPage, submitPage, examPage, examDetail, viewResult } from '../../css/Exam/exam.constants'
 
 Cypress.ExamPage = Cypress.ExamPage || {}
 
@@ -35,8 +35,13 @@ const result = {
 }
 
 let submittedMessageText = 'You have submitted the answers and ended your exam!'
-Cypress.ExamPage.createExamForCourse = (courseCode, paperName, paperBody, examBody) => {
+Cypress.ExamPage.createExamForCourse = (courseCode, paperName, paperBody, examBody, examType) => {
     // cy.log('examBody   = ' + JSON.stringify(examBody))
+    let type = 0
+    if (examType === 'open book') {
+        type = 1
+    }
+    examBody.examType = type
     cy.createExamAndPublishExamByAPI(courseCode, paperName, paperBody, examBody)
 }
 
@@ -124,11 +129,11 @@ Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage = (candidateNam
     cy.get(examDetail.attendanceChartValue).eq(0)
         .should('be.visible')
         .should('have.text', expectBeforeSubmit.numSubmitInChart)
+    cy.get(examDetail.attendanceTable).should('be.visible')
 
     //filter user id
     cy.get(examDetail.attendaceHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 20 })
     cy.waitLoading()
-
     //check value before submit
     cy.getColumnOfTable(examDetail.attendanceTable, 'User ID').then((col) => {
         cy.verifyCellValueOfTable(col, expectBeforeSubmit.UserID, 1)
@@ -144,6 +149,8 @@ Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage = (candidateNam
 Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage = (candidateName) => {
     cy.get(examDetail.marking).should('be.visible').click()
     cy.waitLoading()
+    cy.get(examDetail.markingTable).should('be.visible')
+
     //filter candidate name
     cy.get(examDetail.markingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
     cy.waitLoading()
@@ -162,6 +169,8 @@ Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage = (candidateName) 
 Cypress.ExamPage.verifyResultBeforeCandidateSubmitGradingPage = (candidateName) => {
     cy.get(examDetail.grading).should('be.visible').click()
     cy.waitLoading()
+    cy.get(examDetail.gradingTable).should('be.visible')
+
     //filter candidate name
     cy.get(examDetail.gradingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
     cy.waitLoading()
@@ -202,6 +211,8 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage = (candidateName
     cy.get(examDetail.attendanceChartValue).eq(0)
         .should('be.visible')
         .should('have.text', expectAfterSubmit.numSubmitInChart)
+    cy.get(examDetail.attendanceTable).should('be.visible')
+
     //filter user id
     cy.get(examDetail.attendaceHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 20 })
     cy.waitLoading()
@@ -221,6 +232,14 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitAttendancePage = (candidateName
 Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage = (candidateName) => {
     cy.get(examDetail.marking).should('be.visible').click()
     cy.waitLoading()
+    cy.get(examDetail.markingTable).should('be.visible')
+
+    cy.get(markingPage.totalMarks).should('be.visible').invoke('text').then((text) => {
+        cy.log('total marks     :' + text)
+        result.totalScore = text
+        cy.log('result.totalScore     :' + result.totalScore)
+
+    })
     //filter candidate name
     cy.get(examDetail.markingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
     cy.waitLoading()
@@ -246,6 +265,9 @@ Cypress.ExamPage.unpublishScoreAll = () => {
 }
 
 Cypress.ExamPage.publishScoreOfCandidate = (candidateName) => {
+    cy.get(examDetail.gradingTable).should('be.visible')
+    cy.wait(2000)
+
     //filter candidate name
     cy.get(examDetail.gradingHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 10 })
     cy.waitLoading()
@@ -306,11 +328,9 @@ Cypress.ExamPage.candidateVerifyPublishedScoreOfExam = (examName) => {
     cy.log('result   :' + result.submissionStatus)
     cy.log('result   :' + result.score)
     cy.log('result   :' + result.publishStatus)
-
-    cy.wait(3000)
     cy.get(searchBox.searchField).should('be.visible').eq(0).type(examName + '{enter}', { delay: 10 })
     cy.waitLoading()
-    
+
     //check score at exam page
     cy.get(examPage.examScore).should('be.visible').then(($score) => {
         const scoreAct = $score.text().trim().split('/')[0]
@@ -322,16 +342,15 @@ Cypress.ExamPage.candidateVerifyPublishedScoreOfExam = (examName) => {
     //check score at View result page
     cy.get(examPage.viewResultBtn).should('be.visible').click()
     cy.waitLoading()
-    cy.get(viewResult.score).should('be.visible').invoke(text).then(($text) => {
-        let score = $text.split('/')[0]
-        let totalScore = $text.split('/')[1]
+    cy.get(viewResult.score).should('be.visible').invoke('text').then(($text) => {
+        let score = $text.split('/')[0].trim()
+        let totalScore = $text.split('/')[1].trim()
         expect(score).to.equal(result.score)
         expect(totalScore).to.equal(result.totalScore)
     })
-    cy.get(viewResult.status).should('be.visible').invoke(text).then(($text) => {
+    cy.get(viewResult.status).should('be.visible').invoke('text').then(($text) => {
         expect($text).to.equal(result.submissionStatus)
     })
-
 }
 
 Cypress.ExamPage.delteteExamCreated = (examName) => {

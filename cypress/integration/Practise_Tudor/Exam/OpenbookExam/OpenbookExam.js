@@ -39,8 +39,6 @@ let paperBody = [{
     "questions": ques2
 }]
 let examBody = {}
-let score = ''
-let totalScore = ''
 
 before(() => {
     cy.fixture('exam').then((examInf) => {
@@ -65,7 +63,7 @@ before(() => {
 
 // Scenario: Course manager verify result before taking
 Given(/^I login as course management verify in the Attendance page before submit$/, () => {
-    Cypress.ExamPage.createExamForCourse('ZT-course01', 'TutuPaper_' + date, paperBody, examBody)
+    Cypress.ExamPage.createExamForCourse('ZT-course01', 'TutuPaper_' + date, paperBody, examBody,'open book')
     cy.LoginExamAsSystem()
     Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
     Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage(candidate1.userId)
@@ -122,7 +120,7 @@ And(/^I verify exam in the Grading page and publish score to candidate after sub
 
     Cypress.ExamPage.publishScoreOfCandidate(candidate1.userId)
 
-    score = Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage(candidate1.userId)
+    Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage(candidate1.userId)
     cy.logoutApi()
 })
 
@@ -133,7 +131,7 @@ Then(/^I login as candidate view detail exam taken$/, () => {
 })
 
 And(/^I check the published score is correct$/, () => {
-    Cypress.ExamPage.candidateVerifyPublishedScoreOfExam(examBody.enterExam)
+    Cypress.ExamPage.candidateVerifyPublishedScoreOfExam(examBody.examName)
 })
 
 after(() => {

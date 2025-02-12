@@ -48,3 +48,6 @@ export const viewResult = {
     status : '.basic-info-label[aria-label ="Status"] + div .basic-info-value-inline',
 
 }
+export const markingPage ={
+    totalMarks : '.basic-info-label[aria-label="Total marks"] + div',
+}

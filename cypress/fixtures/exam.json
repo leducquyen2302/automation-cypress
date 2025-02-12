@@ -3,7 +3,7 @@
   "enableVideoProctoring": false,
   "enableFacialRecognition": false,
   "enableIdVerification": false,
-  "enableEnvironmentCheck": true,
+  "enableEnvironmentCheck": false,
   "enableScreenRecording": false,
   "enableCandidateRecording": false,
   "authorisedURLSetting": 2,
@@ -35,7 +35,5 @@
   "duration": 60,
   "attempts": 1,
   "examType": 1,
-  "timezoneOffset": -420,
-  "startDate":"2025-02-10T06:28:00.000Z",
-  "endDate":"2025-02-10T07:28:00.000Z"
+  "timezoneOffset": -420
 }

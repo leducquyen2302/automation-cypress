@@ -1,0 +1,32 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Closebook exam",
+    "line": 1,
+    "id": "closebook-exam",
+    "tags": [],
+    "uri": "ClosebookExam.feature",
+    "elements": [
+      {
+        "id": "closebook-exam;course-manager-verify-result-before-taking",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Course manager verify result before taking",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I login as course management verify in the Attendance page before submit",
+            "result": {
+              "status": "passed",
+              "duration": 33329000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
