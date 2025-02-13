@@ -10,7 +10,7 @@
       {
         "id": "closebook-exam;course-manager-verify-result-before-taking",
         "keyword": "Scenario",
-        "line": 2,
+        "line": 3,
         "name": "Course manager verify result before taking",
         "tags": [],
         "type": "scenario",
@@ -18,11 +18,81 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 3,
+            "line": 4,
             "name": "I login as course management verify in the Attendance page before submit",
             "result": {
               "status": "passed",
-              "duration": 33329000000
+              "duration": 35497000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I verify exam in Marking page before submit",
+            "result": {
+              "status": "passed",
+              "duration": 14485000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I verify exam in the Grading page before submit",
+            "result": {
+              "status": "passed",
+              "duration": 17332000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "closebook-exam;candidate-taking-close-book-exam",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Candidate taking close book exam",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I verify candidate submitting the answers close book normally",
+            "result": {
+              "status": "passed",
+              "duration": 12595000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "closebook-exam;course-manager-verify-result-after-taking-on-proctoring-page",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Course manager verify result after taking on Proctoring page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I login as course management and filter exam",
+            "result": {
+              "status": "passed",
+              "duration": 15885000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I verify in the Proctoring page after submit",
+            "result": {
+              "status": "passed",
+              "duration": 13441000000
             }
           }
         ]

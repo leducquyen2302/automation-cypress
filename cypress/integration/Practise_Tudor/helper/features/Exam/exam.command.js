@@ -1,5 +1,5 @@
 import { searchBox, dialog, table } from '../../css/common.constants'
-import { markingPage, examButton, instructionPage, takingPage, submitPage, examPage, examDetail, viewResult } from '../../css/Exam/exam.constants'
+import { livProcPage, markingPage, examButton, instructionPage, takingPage, submitPage, examPage, examDetail, viewResult } from '../../css/Exam/exam.constants'
 
 Cypress.ExamPage = Cypress.ExamPage || {}
 
@@ -37,10 +37,18 @@ const result = {
 let submittedMessageText = 'You have submitted the answers and ended your exam!'
 Cypress.ExamPage.createExamForCourse = (courseCode, paperName, paperBody, examBody, examType) => {
     // cy.log('examBody   = ' + JSON.stringify(examBody))
-    let type = 0
-    if (examType === 'open book') {
-        type = 1
+    let type = 1
+    if (examType === 'close book') {
+        type = 0
+        examBody.enableFacialRecognition = false
+        examBody.enableIdVerification = false
+        examBody.enableEnvironmentCheck = false
+        examBody.enableScreenRecording = true
+        examBody.enableCandidateRecording = true
+        examBody.enableVideoProctoring = true
+        examBody.screenRecording = true
     }
+
     examBody.examType = type
     cy.createExamAndPublishExamByAPI(courseCode, paperName, paperBody, examBody)
 }
@@ -351,6 +359,36 @@ Cypress.ExamPage.candidateVerifyPublishedScoreOfExam = (examName) => {
     cy.get(viewResult.status).should('be.visible').invoke('text').then(($text) => {
         expect($text).to.equal(result.submissionStatus)
     })
+}
+
+Cypress.ExamPage.verifyAfterCandidateSubmitOnProctoringPage = (canName, examName, expectStt) => {
+    cy.get(examDetail.attendace).should('be.visible').click()
+    cy.waitLoading()
+    cy.get(examDetail.attendanceTable).should('be.visible')
+    cy.getExamIdByAPI(examName).then((res) => {
+        let examId = res.body.result[0].examId
+        let path = 'https://examenauat-sg.dev.edutechonline.org/#/exam/schedule/livevideo?examId=' + examId
+        cy.visit(path)
+    })
+    // cy.get(examDetail.liveProctoringButton).should('be.visible').click()
+    verifyCandidateOnProctoringPage(canName, expectStt)
+}
+
+function verifyCandidateOnProctoringPage(candidateName, expectStt) {
+    cy.get(livProcPage.roomView).should('be.visible')
+    //check icon on candidate list
+    cy.get(livProcPage.listCandidate + ' aui-profile')
+        .shadow()
+        .find('aui-avatar')
+        .shadow()
+        .find('.avatar div')
+        .should('have.class', 'img-icon-submitted')
+
+    //check status in room view
+    cy.get('.invigilator_roomToolBar_view_item_left[aria-label="'+candidateName+'"]')
+        .closest('.invigilator_room_container')
+        .find('span')
+        .should('have.text', expectStt)
 }
 
 Cypress.ExamPage.delteteExamCreated = (examName) => {

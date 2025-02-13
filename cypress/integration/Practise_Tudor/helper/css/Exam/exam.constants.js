@@ -33,6 +33,7 @@ export const examDetail = {
     attendanceChartValue : '.aui-chart-legend-value',
     attendanceTable : '#attendanceTable',
     attendaceHeader : '.attendance-action-header',
+    liveProctoringButton : '.attendance_liveProctoring button',
     markingHeader : '.making-progress-sticky',
     markingTable : '#MarkScoreList_candidate',
     gradingHeader : '.making-grading-sticky',
@@ -50,4 +51,10 @@ export const viewResult = {
 }
 export const markingPage ={
     totalMarks : '.basic-info-label[aria-label="Total marks"] + div',
+}
+export const livProcPage = {
+    candidateName : '.invigilator_roomToolBar_view_container',
+    statusView : '.invigilator_room_view_container span',
+    listCandidate : '.candidatesList_name',
+    roomView : '.invigilator_room_view_container',
 }

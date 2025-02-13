@@ -3134,3 +3134,185 @@ Cypress.Commands.add('getColumnOfTable', (table, columnName) => {
         .should('be.visible')
         .invoke('attr', 'data-col')
 })
+
+Cypress.Commands.add('candidateSubmitExam', (candidateId, examName, paperName) => {
+    cy.log(`get token of ${candidateId}`)
+    cy.request({
+        url: '/account/ApiLogin',
+        method: 'POST',
+        form: false,
+        body: {
+            userName: candidateId,
+            Password: defaultPassword,
+            RegionHost: api_url,
+            TenantId: "ef711408-7cd4-4c76-8301-55059b2dc658"
+        }
+    }).then((res) => {
+        expect(res.status).to.eq(200)
+        let auth = {
+            token: res.body.accessToken,
+            tenId: "ef711408-7cd4-4c76-8301-55059b2dc658",
+            apiUrl: api_url
+        }
+
+        cy.getExamIdByAPI(examName).then((response) => {
+            let examId = response.body.result[0].examId
+            cy.log('exam submit :' + examName + '    ' + examId)
+            cy.getQuestionIds(paperName).then((res) => {
+                let quesIds = []
+                let quesType = []
+                res.body.data.sections.forEach(sec => {
+                    sec.questions.forEach(ques => {
+                        quesIds.push(ques.question.id)
+                        quesType.push(ques.question.questionType)
+
+                    })
+                })
+
+                examStudentResponseItems(auth, examId)
+                cy.request({
+                    url: auth.apiUrl + '/taking/api/examstudentresponseitems/savesubmitstudentresponseitems',
+                    method: 'POST',
+                    auth: { 'bearer': auth.token },
+                    headers: {
+                        Cookie: "TenantId=" + auth.tenId
+                    },
+                    body: {
+                        "responseItems": [
+                            // {
+                            //     "questionId": quesIds[0],
+                            //     "questionType": quesType[0],
+                            //     "tag": 1,
+                            //     "responseValue": "{\"id\":" + quesIds[0] + ",\"response\":{\"categories\":[{\"id\":\"5ca8d885-0f20-4786-848b-9e6aea45d809\",\"options\":[{\"id\":\"95dfeb9d-6834-4e61-a28f-da1753114568\"},{\"id\":\"536c257b-5f9c-4baf-8b3f-904929a0281e\"},{\"id\":\"9ca2ee27-c1a1-48a9-b507-fc044c5c7a5c\"}]}]}}"
+                            // },
+                            // {
+                            //     "questionId": quesIds[1],
+                            //     "questionType": quesType[1],
+                            //     "tag": 1,
+                            //     "responseValue": "{\"id\":" + quesIds[1] + ",\"response\":{\"options\":[\"choice_0\"]}}"
+                            // },
+                            // {
+                            //     "questionId": quesIds[2],
+                            //     "questionType": quesType[2],
+                            //     "tag": 1,
+                            //     "responseValue": "{\"id\":" + quesIds[2] + ",\"response\":{\"lines\":[{\"leftId\":\"option-0-left\",\"rightId\":\"option-0-right\"},{\"leftId\":\"option-2-left\",\"rightId\":\"option-2-right\"},{\"leftId\":\"option-1-left\",\"rightId\":\"option-1-right\"}]}}"
+                            // },
+                            // {
+                            //     "questionId": quesIds[3],
+                            //     "questionType": quesType[3],
+                            //     "tag": 1,
+                            //     "responseValue": "{\"id\":" + quesIds[3] + ",\"response\":{\"options\":[{\"id\":\"order_0\",\"content\":\"answer : 1\"},{\"id\":\"order_1\",\"content\":\"answer : 2\"},{\"id\":\"order_2\",\"content\":\"answer : 3\"}]}}"
+                            // },
+                            // {
+                            //     "questionId": quesIds[4],
+                            //     "questionType": quesType[4],
+                            //     "tag": 1,
+                            //     "responseValue": "{\"id\":" + quesIds[4] + ",\"response\":{\"options\":[\"choice_0\"]}}"
+                            // },
+                            // {
+                            //     "questionId": quesIds[5],
+                            //     "questionType": quesType[5],
+                            //     "tag": 1,
+                            //     "responseValue": "{\"id\":" + quesIds[5] + ",\"response\":{\"blanks\":[[{\"key\":\"blank_1\",\"contents\":\"21\"}]]}}"
+                            // },
+                            // {
+                            //     "questionId": quesIds[6],
+                            //     "questionType": quesType[6],
+                            //     "tag": 1,
+                            //     "responseValue": "{\"id\":" + quesIds[6] + ",\"response\":{\"dropdownList\":[{\"id\":\"Blank-1\",\"options\":[\"choice_1_1\"]}]}}"
+                            // }
+                        ],
+                        "saveStatus": 2,
+                        "examId": examId,
+                        "deviceName": "8a4ab52d-f2d5-4281-8a7e-7da8596d0e89"
+                    }
+                })
+                getExamById(auth, examId)
+            })
+        })
+    })
+})
+
+
+Cypress.Commands.add('getExamIdByAPI', (examName) => {
+    cy.API_Login().then((res_auth) => {
+        let token = res_auth.body.accessToken
+        let auth = {
+            token: token,
+            tenId: env[cu_ten_string].System.tenantid,
+            apiUrl: api_url
+        }
+        cy.request({
+            url: auth.apiUrl + '/schedule/api/exam/getallexamsbycurrentuser',
+            method: 'POST',
+            auth: { 'bearer': auth.token },
+            headers: {
+                Cookie: "TenantId=" + auth.tenId
+            },
+            body: {
+                "searchText": examName,
+                "searchFields": "ExamName",
+                "filters": {
+                    "courseFilter": [],
+                    "semester": [],
+                    "examPublishStatusDisplay": [],
+                    "examTypeDisplay": [],
+                    "examClassificationDisplay": [],
+                    "Level1Filter": [],
+                    "Level2Filter": []
+                },
+                "startDate": "2025-01-12T17:00:00.000Z",
+                "offset": 1,
+                "limit": 24,
+                "sortBy": "ExamReadingStartDateOffset",
+                "isASC": false,
+                "viewType": 1,
+                "timezoneOffset": -420
+            }
+        })
+
+    })
+})
+
+Cypress.Commands.add('getQuestionIds', (paperName) => {
+    cy.API_Login().then((res_auth) => {
+        let token = res_auth.body.accessToken
+        let auth = {
+            token: token,
+            tenId: env[cu_ten_string].System.tenantid,
+            apiUrl: api_url
+        }
+        cy.getPaperIdByName(auth, paperName).then(($res) => {
+            let paperId = $res.body.data.value.result[0].id
+            cy.request({
+                url: auth.apiUrl + '/authoring/api/papers?id=' + paperId,
+                method: 'GET',
+                auth: { 'bearer': auth.token },
+                headers: {
+                    Cookie: "TenantId=" + auth.tenId
+                }
+            })
+        })
+    })
+})
+
+function getExamById(auth, examId) {
+    cy.request({
+        url: auth.apiUrl + '/taking/api/examdetails/getexambyid?examId=' + examId,
+        method: 'GET',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        }
+    })
+}
+function examStudentResponseItems(auth, examId) {
+    cy.request({
+        url: auth.apiUrl + '/taking/api/examstudentresponseitems/getstudentresponseitems?examId=' + examId + '&deviceName=8a4ab52d-f2d5-4281-8a7e-7da8596d0e89&isUrlPaper=false',
+        method: 'GET',
+        auth: { 'bearer': auth.token },
+        headers: {
+            Cookie: "TenantId=" + auth.tenId
+        }
+    })
+}

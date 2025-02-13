@@ -37,6 +37,7 @@ let paperBody = [{
     "questions": ques2
 }]
 let examBody = {}
+let paperName = 'TutuPaper_' + date
 
 before(() => {
     cy.fixture('exam').then((examInf) => {
@@ -61,19 +62,37 @@ before(() => {
 
 // Scenario: Course manager verify result before taking
 Given(/^I login as course management verify in the Attendance page before submit$/, () => {
-    Cypress.ExamPage.createExamForCourse('ZT-course01', 'TutuPaper_' + date, paperBody, examBody,'close book')
+    Cypress.ExamPage.createExamForCourse('ZT-course01', paperName, paperBody, examBody, 'close book')
+
     cy.LoginExamAsSystem()
     Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
     Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage(candidate1.userId)
 })
 
-And(/^I verify exam in Marking page before submit$/, () => {
+Then(/^I verify exam in Marking page before submit$/, () => {
     Cypress.ExamPage.verifyResultBeforeCandidateSubmitMarkingPage(candidate1.name)
+
 })
 
-And(/^I verify exam in the Grading page before submit$/, () => {
+Then(/^I verify exam in the Grading page before submit$/, () => {
     Cypress.ExamPage.verifyResultBeforeCandidateSubmitGradingPage(candidate1.userId)
     cy.logoutApi()
+})
+
+// Scenario: Candidate taking close book exam
+Then(/^I verify candidate submitting the answers close book normally$/, () => {
+    cy.LoginByLocal(candidate1.userId)
+    cy.candidateSubmitExam(candidate1.userId, examBody.examName, paperName)
+    cy.logoutApi()
+})
+
+// Scenario: Course manager verify result after taking on Proctoring page
+Given(/^I login as course management and filter exam$/, () => {
+    cy.LoginExamAsSystem()
+    Cypress.ExamPage.filterExamHasNameAndViewDetail(examBody.examName)
+})
+Then(/^I verify in the Proctoring page after submit$/, () => {
+    Cypress.ExamPage.verifyAfterCandidateSubmitOnProctoringPage(candidate1.name, examBody.examName, 'Exam ended')
 })
 
 after(() => {
