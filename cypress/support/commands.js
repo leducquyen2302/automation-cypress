@@ -3226,6 +3226,8 @@ Cypress.Commands.add('candidateSubmitExam', (candidateId, examName, paperName) =
                         "examId": examId,
                         "deviceName": "8a4ab52d-f2d5-4281-8a7e-7da8596d0e89"
                     }
+                }).then((res)=>{
+                    cy.log(res.body)
                 })
                 getExamById(auth, examId)
             })

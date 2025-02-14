@@ -22,7 +22,7 @@
             "name": "I login as course management verify in the Attendance page before submit",
             "result": {
               "status": "passed",
-              "duration": 41566000000
+              "duration": 34589000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I verify exam in Marking page before submit",
             "result": {
               "status": "passed",
-              "duration": 15645000000
+              "duration": 12967000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "I verify exam in the Grading page before submit",
             "result": {
               "status": "passed",
-              "duration": 19866000000
+              "duration": 16399000000
             }
           }
         ]
@@ -62,7 +62,7 @@
             "name": "I login as candidate and go to instructions page",
             "result": {
               "status": "passed",
-              "duration": 11854000000
+              "duration": 10591000000
             }
           },
           {
@@ -72,7 +72,7 @@
             "name": "I enter a openbook exam",
             "result": {
               "status": "passed",
-              "duration": 3537000000
+              "duration": 4748000000
             }
           },
           {
@@ -82,7 +82,7 @@
             "name": "I answer all the questions",
             "result": {
               "status": "passed",
-              "duration": 4114000000
+              "duration": 2914000000
             }
           },
           {
@@ -92,7 +92,7 @@
             "name": "I verify candidate submitting the answers normally",
             "result": {
               "status": "passed",
-              "duration": 6267000000
+              "duration": 6072000000
             }
           }
         ]
@@ -112,7 +112,7 @@
             "name": "I login as course management verify in the Attendance page after submit",
             "result": {
               "status": "passed",
-              "duration": 26980000000
+              "duration": 22933000000
             }
           },
           {
@@ -122,7 +122,7 @@
             "name": "I verify exam in Marking page after submit",
             "result": {
               "status": "passed",
-              "duration": 13804000000
+              "duration": 12125000000
             }
           },
           {
@@ -132,7 +132,7 @@
             "name": "I verify exam in the Grading page and publish score to candidate after submit",
             "result": {
               "status": "passed",
-              "duration": 28591000000
+              "duration": 26777000000
             }
           }
         ]
@@ -152,7 +152,7 @@
             "name": "I login as candidate view detail exam taken",
             "result": {
               "status": "passed",
-              "duration": 7705000000
+              "duration": 6164000000
             }
           },
           {
@@ -162,7 +162,7 @@
             "name": "I check the published score is correct",
             "result": {
               "status": "passed",
-              "duration": 9783000000
+              "duration": 6705000000
             }
           }
         ]

@@ -22,7 +22,7 @@
             "name": "I login as course management verify in the Attendance page before submit",
             "result": {
               "status": "passed",
-              "duration": 35497000000
+              "duration": 45730000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I verify exam in Marking page before submit",
             "result": {
               "status": "passed",
-              "duration": 14485000000
+              "duration": 23989000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "I verify exam in the Grading page before submit",
             "result": {
               "status": "passed",
-              "duration": 17332000000
+              "duration": 16689000000
             }
           }
         ]
@@ -62,7 +62,7 @@
             "name": "I verify candidate submitting the answers close book normally",
             "result": {
               "status": "passed",
-              "duration": 12595000000
+              "duration": 18677000000
             }
           }
         ]
@@ -82,7 +82,7 @@
             "name": "I login as course management and filter exam",
             "result": {
               "status": "passed",
-              "duration": 15885000000
+              "duration": 16207000000
             }
           },
           {
@@ -92,7 +92,7 @@
             "name": "I verify in the Proctoring page after submit",
             "result": {
               "status": "passed",
-              "duration": 13441000000
+              "duration": 9134000000
             }
           }
         ]

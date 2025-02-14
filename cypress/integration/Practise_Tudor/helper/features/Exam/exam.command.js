@@ -55,8 +55,8 @@ Cypress.ExamPage.createExamForCourse = (courseCode, paperName, paperBody, examBo
 
 Cypress.ExamPage.goToInstructionsPageOfExam = (examName) => {
     Cypress.CommonPage.clickLeftNavigation('Exam')
-    cy.wait(3000)
-    cy.get(searchBox.searchField).eq(0).type(examName + '{enter}', { delay: 20 })
+    cy.get(examButton.enterExam).should('be.visible')
+    cy.get(searchBox.searchField, { timeout: 5000 }).eq(0).type(examName + '{enter}', { delay: 20 })
     cy.waitLoading()
     cy.get(examButton.enterExam).eq(0).click()
     // cy.wait(10000)
@@ -83,7 +83,7 @@ Cypress.ExamPage.enterExam = () => {
     //enter exam 
     cy.waitLoading()
     cy.wait(2000)
-    cy.get(instructionPage.button).should('be.visible').and('not.be.disabled').click()
+    cy.get(instructionPage.button, { timeout: 5000 }).should('be.visible').and('not.be.disabled').click()
     // cy.get(dialog.modal).find('aui-button').eq(1).click()
     cy.waitLoading()
     // //accept share screen
@@ -93,7 +93,7 @@ Cypress.ExamPage.enterExam = () => {
 
 Cypress.ExamPage.answerAllQuestions = () => {
     // answerCategoization('')
-    cy.get(takingPage.nextQuestion).eq(1).click().wait(1000)
+    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click().wait(1000)
     cy.contains('Submit and end exam').should('be.visible').click()
     cy.contains('End exam').should('be.visible').click()
     cy.waitLoading()
@@ -140,7 +140,7 @@ Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage = (candidateNam
     cy.get(examDetail.attendanceTable).should('be.visible')
 
     //filter user id
-    cy.get(examDetail.attendaceHeader).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 20 })
+    cy.get(examDetail.attendaceHeader, { timeout: 5000 }).find(searchBox.searchField).type(candidateName + '{enter}', { delay: 20 })
     cy.waitLoading()
     //check value before submit
     cy.getColumnOfTable(examDetail.attendanceTable, 'User ID').then((col) => {
@@ -207,6 +207,7 @@ Cypress.ExamPage.verifyResultBeforeCandidateSubmitGradingPage = (candidateName) 
 Cypress.ExamPage.filterExamHasNameAndViewDetail = (examName) => {
     Cypress.CommonPage.clickLeftNavigation('Exam')
     cy.waitLoading()
+    cy.get(examPage.examName).should('be.visible')
     cy.get(searchBox.searchField).should('be.visible').eq(0).type(examName + '{enter}', { delay: 10 })
     cy.waitLoading()
     cy.get(examPage.examName).eq(0).click()
@@ -297,7 +298,7 @@ Cypress.ExamPage.publishScoreOfCandidate = (candidateName) => {
     cy.waitLoading()
 }
 
-Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage = (candidateName) => {
+Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage = () => {
     cy.getColumnOfTable(examDetail.gradingTable, 'User ID').then((col) => {
         cy.verifyCellValueOfTable(col, expectAfterSubmit.UserID, 1).then((text) => {
             result.userId = text
@@ -331,11 +332,9 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage = (candidateName) =
 }
 
 Cypress.ExamPage.candidateVerifyPublishedScoreOfExam = (examName) => {
-    cy.log('result   :' + result.userId)
-    cy.log('result   :' + result.attendanceStatus)
-    cy.log('result   :' + result.submissionStatus)
-    cy.log('result   :' + result.score)
-    cy.log('result   :' + result.publishStatus)
+    cy.wait(3000)
+    cy.get(examPage.studentExamCard).should('be.visible')
+
     cy.get(searchBox.searchField).should('be.visible').eq(0).type(examName + '{enter}', { delay: 10 })
     cy.waitLoading()
 
@@ -385,7 +384,7 @@ function verifyCandidateOnProctoringPage(candidateName, expectStt) {
         .should('have.class', 'img-icon-submitted')
 
     //check status in room view
-    cy.get('.invigilator_roomToolBar_view_item_left[aria-label="'+candidateName+'"]')
+    cy.get('.invigilator_roomToolBar_view_item_left[aria-label="' + candidateName + '"]')
         .closest('.invigilator_room_container')
         .find('span')
         .should('have.text', expectStt)

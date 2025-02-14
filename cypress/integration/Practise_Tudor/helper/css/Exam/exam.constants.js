@@ -21,6 +21,8 @@ export const examPage = {
     examName : '.exam-card-content a',
     examScore : '.exam-card-info-markscore',
     viewResultBtn : '.exam-card-footer button[aria-label="View results"]',
+    studentExamCard : '.student-exam-title-container',
+
 }
 
 export const examDetail = {
