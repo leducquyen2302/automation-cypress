@@ -22,7 +22,7 @@
             "name": "I login as course management verify in the Attendance page before submit",
             "result": {
               "status": "passed",
-              "duration": 34589000000
+              "duration": 33760000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I verify exam in Marking page before submit",
             "result": {
               "status": "passed",
-              "duration": 12967000000
+              "duration": 13841000000
             }
           },
           {
@@ -41,8 +41,9 @@
             "line": 6,
             "name": "I verify exam in the Grading page before submit",
             "result": {
-              "status": "passed",
-              "duration": 16399000000
+              "status": "failed",
+              "duration": 3629000000,
+              "error_message": "CypressError: `cy.type()` failed because it requires a valid typeable element.\n\nThe element typed into was:\n\n  > `<aui-loading u:id=\"0\"></aui-loading>`\n\n  A typeable element matches one of the following selectors:\n  `a[href]`\n  `area[href]`\n  `input`\n  `select`\n  `textarea`\n  `button`\n  `iframe`\n  `[tabindex]`\n  `[contenteditable]`\n    at validateTyping (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:164791:74)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:165075:15\nFrom previous event:\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:165123:67\nFrom previous event:\n    at Keyboard.type (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:165121:60)\n    at type (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:154871:23)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:155102:20\nFrom previous event:\n    at onReady (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:155078:14)\n    at runAllChecks (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150612:14)\n    at retryActionability (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150621:16)\n    at whenStable (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:168785:63)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:168282:14\nFrom previous event:\n    at $Cy.retry (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:168262:76)\n    at retryActionability (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150624:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150628:12\nFrom previous event:\n    at Object.verify (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:150533:61)\n    at handleFocused (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:155049:77)\n    at Context.type (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:155109:12)\n    at Context.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173242:19)\nFrom Your Spec Code:\n    at Cypress.ExamPage.verifyResultBeforeCandidateSubmitGradingPage (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:418:78)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:104:20)\n    at Context.resolveAndRunStepDefinition (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:10589:29)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\integration\\Practise_Tudor\\Exam\\OpenbookExam.feature:9910:35)"
             }
           }
         ]
@@ -61,8 +62,8 @@
             "line": 9,
             "name": "I login as candidate and go to instructions page",
             "result": {
-              "status": "passed",
-              "duration": 10591000000
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'split')\n    at getTokenfromEOS (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:2425:34)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:2407:5)\nFrom previous event:\n    at Context.thenFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173242:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172077:8)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126278:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126404:12\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126187:14)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126197:7\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126160:7)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180310:24)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180336:59)\n    at done (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126121:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:120091:27)"
             }
           },
           {
@@ -71,8 +72,7 @@
             "line": 10,
             "name": "I enter a openbook exam",
             "result": {
-              "status": "passed",
-              "duration": 4748000000
+              "status": "skipped"
             }
           },
           {
@@ -81,8 +81,7 @@
             "line": 11,
             "name": "I answer all the questions",
             "result": {
-              "status": "passed",
-              "duration": 2914000000
+              "status": "skipped"
             }
           },
           {
@@ -91,8 +90,7 @@
             "line": 12,
             "name": "I verify candidate submitting the answers normally",
             "result": {
-              "status": "passed",
-              "duration": 6072000000
+              "status": "skipped"
             }
           }
         ]
@@ -111,8 +109,8 @@
             "line": 15,
             "name": "I login as course management verify in the Attendance page after submit",
             "result": {
-              "status": "passed",
-              "duration": 22933000000
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'split')\n    at getTokenfromEOS (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:2425:34)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:2407:5)\nFrom previous event:\n    at Context.thenFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173242:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172077:8)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126278:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126404:12\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126187:14)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126197:7\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126160:7)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180310:24)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180336:59)\n    at done (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126121:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:120091:27)"
             }
           },
           {
@@ -121,8 +119,7 @@
             "line": 16,
             "name": "I verify exam in Marking page after submit",
             "result": {
-              "status": "passed",
-              "duration": 12125000000
+              "status": "skipped"
             }
           },
           {
@@ -131,8 +128,7 @@
             "line": 17,
             "name": "I verify exam in the Grading page and publish score to candidate after submit",
             "result": {
-              "status": "passed",
-              "duration": 26777000000
+              "status": "skipped"
             }
           }
         ]
@@ -151,8 +147,8 @@
             "line": 20,
             "name": "I login as candidate view detail exam taken",
             "result": {
-              "status": "passed",
-              "duration": 6164000000
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'split')\n    at getTokenfromEOS (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:2425:34)\n    at Context.eval (https://examenauat.dev.edutechonline.org/__cypress/tests?p=cypress\\support\\index.js:2407:5)\nFrom previous event:\n    at Context.thenFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173242:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172077:8)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:19)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126278:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126404:12\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126187:14)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126197:7\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126160:7)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180310:24)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180336:59)\n    at done (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:125606:7)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:178076:13)\n    at next (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126121:10)\n    at https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (https://examenauat.dev.edutechonline.org/__cypress/runner/cypress_runner.js:120091:27)"
             }
           },
           {
@@ -161,8 +157,7 @@
             "line": 21,
             "name": "I check the published score is correct",
             "result": {
-              "status": "passed",
-              "duration": 6705000000
+              "status": "skipped"
             }
           }
         ]

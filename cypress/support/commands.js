@@ -25,7 +25,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 //
-
+import '@4tw/cypress-drag-drop'
 require('@4tw/cypress-drag-drop')
 let moment = require('moment')
 let cookieKey = ['TenantId', 'ESESSIONID', '.AspNetCore.Culture']
@@ -3226,7 +3226,7 @@ Cypress.Commands.add('candidateSubmitExam', (candidateId, examName, paperName) =
                         "examId": examId,
                         "deviceName": "8a4ab52d-f2d5-4281-8a7e-7da8596d0e89"
                     }
-                }).then((res)=>{
+                }).then((res) => {
                     cy.log(res.body)
                 })
                 getExamById(auth, examId)

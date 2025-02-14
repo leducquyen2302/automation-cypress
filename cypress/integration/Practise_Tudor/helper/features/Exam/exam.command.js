@@ -1,4 +1,4 @@
-import { searchBox, dialog, table } from '../../css/common.constants'
+import { searchBox, dialog, table, comboBox } from '../../css/common.constants'
 import { livProcPage, markingPage, examButton, instructionPage, takingPage, submitPage, examPage, examDetail, viewResult } from '../../css/Exam/exam.constants'
 
 Cypress.ExamPage = Cypress.ExamPage || {}
@@ -20,7 +20,7 @@ const expectAfterSubmit = {
     attendanceStatus: 'Present',
     examinationStatus: 'Submitted',
     submissionStatus: 'Submitted',
-    totalScore: '0',
+    totalScore: '',
     publishStatus: 'Published',
     publishTime: '',
 }
@@ -92,15 +92,31 @@ Cypress.ExamPage.enterExam = () => {
 }
 
 Cypress.ExamPage.answerAllQuestions = () => {
-    // answerCategoization('')
-    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click().wait(1000)
+    answerCategoization('')
+    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click()
+
+    answerMultipleChoice(['answer : 1', 'answer : 2'])
+    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click()
+
+    answerMatching('')
+    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click()
+
+    answerOrdering('')
+    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click()
+
+    answerSingleChoice('')
+    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click()
+
+    answerFIB('')
+    cy.get(takingPage.nextQuestion).should('be.visible').eq(1).click()
+
+    answerMultipleDropdown('')
     cy.contains('Submit and end exam').should('be.visible').click()
     cy.contains('End exam').should('be.visible').click()
     cy.waitLoading()
 }
 
 Cypress.ExamPage.submitExamSuccess = () => {
-
     cy.get(submitPage.submitedIcon)
         .should('be.visible')
         .should('have.attr', 'src', '/taking/resources/images/examapp-completed-succ.svg')
@@ -110,25 +126,72 @@ Cypress.ExamPage.submitExamSuccess = () => {
         .should('be.visible')
     //     .click()
     // cy.waitLoading()
-    cy.wait(3000)
+    cy.wait(1000)
 }
 
 function answerCategoization(answer) {
-    if (answer === '') {
-        cy.wait(3000)
-        cy.get('.drop-area-from-option [style="display: block;"] .drag-option').eq(0)
-            .drag('.options-order-column .order-options-item:nth-child(1)').wait(1000)
-    }
-    cy.wait(2000)
+    let numberAnswer = answer.length
+    cy.get('.options-item.option-entity.option-move').each(($option, index) => {
+        if (numberAnswer !== 0) {
+            cy.wrap($option).contains(answer[index]).click()
+            cy.get('.question-font-style.padding-bottom-s').eq(i).click()
+        } else {
+            cy.wrap($option).click()
+            cy.get('.question-font-style.padding-bottom-s').eq(0).click()
+        }
+    })
 }
-
-function answerMultipleChoice(answer) { }
+function answerMultipleChoice(answer) {
+    let numberAnswer = answer.length
+    if (numberAnswer !== 0) {
+        for (let i = 0; i < numberAnswer; i++) {
+            cy.log('answer : ' + answer[i])
+            cy.get('.singleChoice-input').contains(answer[i]).click()
+        }
+    }
+}
 function fileUpload() { }
-function answerMatching() { }
-function answerSingleChoice() { }
+function answerMatching() {
+    cy.get('.matching-item .left').each(($opt, index) => {
+        cy.wrap($opt).click()
+        cy.get('.matching-item .right').eq(index).click()
+    })
+}
+function answerOrdering() {
+    cy.get('.order-options-wrap:nth-child(1) .had-option').each(() => {
+        cy.get('.order-options-wrap:nth-child(1) .had-option', { timeout: 2000 }).eq(0).click()
+        cy.get('.order-options-wrap:nth-child(3) .no-option', { timeout: 2000 }).eq(0).click()
+    })
+}
+function answerSingleChoice(answer) {
+    if (answer) {
+        cy.log('answer : ' + answer)
+        cy.get('.singleChoice-input').contains(answer).click()
+    } else {
+        cy.get('.singleChoice-input').eq(0).click()
+    }
+}
 function answerEssay() { }
-function answerFIB() { }
-function answerMultipleDropdown() { }
+function answerFIB() {
+    cy.get('.fib-blank-wrap input').each(($input, index) => {
+        cy.wrap($input).type('answer : ' + index, { delay: 10 })
+    })
+}
+function answerMultipleDropdown(answer) {
+    cy.get(comboBox.comboBox).each(($combobox) => {
+        cy.wrap($combobox).click()
+        if (answer) {
+            cy.log('answer : ' + answer)
+            cy.get(comboBox.textCheckBox).invoke('text').then((text) => {
+                if (text.includes(answer)) {
+                    cy.get(comboBox.textCheckBox).contains(answer).click()
+                }
+            })
+        } else {
+            cy.get(comboBox.textCheckBox).eq(0).click()
+        }
+    })
+}
 function answerTrueFalse() { }
 
 Cypress.ExamPage.verifyResultBeforeCandidateSubmitAttendancePage = (candidateName) => {
@@ -246,6 +309,7 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage = (candidateName) =
     cy.get(markingPage.totalMarks).should('be.visible').invoke('text').then((text) => {
         cy.log('total marks     :' + text)
         result.totalScore = text
+        expectAfterSubmit.totalScore = text
         cy.log('result.totalScore     :' + result.totalScore)
 
     })
