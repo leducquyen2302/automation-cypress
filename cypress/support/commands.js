@@ -3112,7 +3112,7 @@ Cypress.Commands.add('getPaperIdByName', (auth, paperName) => {
 })
 
 Cypress.Commands.add('verifyCellValueOfTable', (col, expectValue, numberRoleCheck) => {
-    if (numberRoleCheck !== null && numberRoleCheck !== '') {
+    if (numberRoleCheck) {
         for (let i = 1; i <= numberRoleCheck; i++) {
             cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="' + i + ',' + col + '"]')
                 .scrollIntoView({ easing: 'linear', duration: 500 })

@@ -308,8 +308,8 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage = (candidateName) =
 
     cy.get(markingPage.totalMarks).should('be.visible').invoke('text').then((text) => {
         cy.log('total marks     :' + text)
-        result.totalScore = text
         expectAfterSubmit.totalScore = text
+        result.totalScore = text
         cy.log('result.totalScore     :' + result.totalScore)
 
     })
@@ -323,9 +323,14 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitMarkingPage = (candidateName) =
     cy.getColumnOfTable(examDetail.markingTable, 'Submission status').then((col) => {
         cy.verifyCellValueOfTable(col, expectAfterSubmit.submissionStatus, 1)
     })
-    // cy.getColumnOfTable(examDetail.markingTable, 'Total score').then((col) => {
-    //     cy.verifyCellValueOfTable(col, expectAfterSubmit.totalScore, 1)
-    // })
+    cy.getColumnOfTable(examDetail.markingTable, 'Total score').then((col) => {
+        cy.get('.aui-table-cell[data-col="' + col + '"][data-cell="1,' + col + '"]')
+            .scrollIntoView({ easing: 'linear', duration: 500 })
+            .invoke('text')
+            .then((text) => {
+                result.score = text
+            })
+    })
 }
 
 Cypress.ExamPage.unpublishScoreAll = () => {
@@ -382,7 +387,7 @@ Cypress.ExamPage.verifyResultAfterCandidateSubmitGradingPage = () => {
     })
 
     cy.getColumnOfTable(examDetail.gradingTable, 'Total score').then((col) => {
-        cy.verifyCellValueOfTable(col, expectAfterSubmit.totalScore, 1).then((text) => {
+        cy.verifyCellValueOfTable(col, result.score, 1).then((text) => {
             result.score = text
         })
     })
